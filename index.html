@@ -6,39 +6,46 @@
   <title>Ramin Jabbarli — Sociology</title>
   <meta name="description" content="PhD Candidate in Sociology at the University of Washington. Research on ritual, national belonging, and interethnic solidarity in Iran and Turkey." />
   <style>
-    :root { --max: 980px; --pad: 20px; }
-    * { box-sizing: border-box; }
-    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin:0; color:#222; line-height:1.6; }
-    a { color:#0a66c2; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    /* Nav */
-    .nav { position: sticky; top:0; z-index:10; background:#fff; border-bottom:1px solid #eee; }
-    .nav-inner { max-width: var(--max); margin:0 auto; padding: 10px var(--pad); display:flex; align-items:center; justify-content:space-between; gap:10px; }
-    .brand { font-weight:700; letter-spacing:.2px; }
-    .menu { display:flex; gap:14px; flex-wrap:wrap; }
-    .menu a { padding:8px 10px; border-radius:10px; }
-    .menu a:focus, .menu a:active { outline: 2px solid #0a66c2; }
-    /* Layout */
-    .hero { padding: 48px var(--pad) 20px; border-bottom:1px solid #eee; }
-    .hero > .wrap, main { max-width: var(--max); margin: 0 auto; }
-    h1 { margin:0 0 8px; font-size: 32px; }
-    h2 { margin: 26px 0 12px; font-size: 24px; }
-    .sub { color:#555; font-size:16px; }
-    section { padding: 26px var(--pad); scroll-margin-top: 70px; }
-    .card { border:1px solid #eee; border-radius:14px; padding:18px; background:#fff; }
-    .two-col { display:grid; gap:18px; grid-template-columns: 1fr; }
-    @media (min-width: 820px){ .two-col { grid-template-columns: 1fr 1fr; } }
-    ul { margin: 8px 0; padding-left: 18px; }
-    .btns { display:flex; gap:12px; flex-wrap:wrap; margin-top:12px; }
-    .btn { display:inline-block; padding:10px 14px; border:1px solid #0a66c2; border-radius:12px; text-decoration:none; }
-    .muted { color:#666; font-size:14px; }
-    footer { text-align:center; padding: 28px 16px; border-top:1px solid #eee; color:#666; font-size:14px; }
-    .list-item { margin-bottom: 10px; }
-    .kv { display:grid; grid-template-columns: 140px 1fr; gap:10px; max-width: 680px; }
-    @media (max-width:500px){ .kv { grid-template-columns: 1fr; } }
-    .chip { display:inline-block; border:1px solid #eee; border-radius:999px; padding:2px 8px; font-size:12px; color:#555; }
-    html { scroll-behavior: smooth; }
-  </style>
+  :root { --max: 980px; --pad: 20px; --brand: #4b2e83; --brandText: #ffffff; }
+  * { box-sizing: border-box; }
+  body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin:0; color:#222; line-height:1.6; }
+  a { color:#0a66c2; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* Nav */
+  .nav { position: sticky; top:0; z-index:10; background: var(--brand); border-bottom:1px solid rgba(255,255,255,.15); }
+  .nav-inner { max-width: var(--max); margin:0 auto; padding: 10px var(--pad); display:flex; align-items:center; justify-content:space-between; gap:10px; color: var(--brandText); }
+  .brand { font-weight:700; letter-spacing:.2px; color: var(--brandText); }
+  .menu { display:flex; gap:14px; flex-wrap:wrap; }
+  .menu a { padding:8px 10px; border-radius:10px; color: var(--brandText); }
+  .menu a:focus, .menu a:active { outline: 2px solid #ffffff; }
+
+  /* Layout */
+  .hero { padding: 48px var(--pad) 20px; border-bottom:1px solid #eee; background: var(--brand); color: var(--brandText); }
+  .hero > .wrap, main { max-width: var(--max); margin: 0 auto; }
+  h1 { margin:0 0 8px; font-size: 32px; }
+  h2 { margin: 26px 0 12px; font-size: 24px; }
+  .sub { color: #e9e6f5; font-size:16px; }
+  section { padding: 26px var(--pad); scroll-margin-top: 70px; }
+  .card { border:1px solid #eee; border-radius:14px; padding:18px; background:#fff; }
+  .two-col { display:grid; gap:18px; grid-template-columns: 1fr; }
+  @media (min-width: 820px){ .two-col { grid-template-columns: 1fr 1fr; } }
+  ul { margin: 8px 0; padding-left: 18px; }
+  .btns { display:flex; gap:12px; flex-wrap:wrap; margin-top:12px; }
+  .btn { display:inline-block; padding:10px 14px; border-radius:12px; text-decoration:none; border:1px solid #0a66c2; color:#0a66c2; background:#fff; }
+  .btn--light { border:1px solid #ffffff; color:#ffffff; background: transparent; }
+  .muted { color:#666; font-size:14px; }
+  footer { text-align:center; padding: 28px 16px; border-top:1px solid #eee; color:#666; font-size:14px; }
+  .list-item { margin-bottom: 10px; }
+  .kv { display:grid; grid-template-columns: 140px 1fr; gap:10px; max-width: 680px; }
+  @media (max-width:500px){ .kv { grid-template-columns: 1fr; } }
+  .chip { display:inline-block; border:1px solid #eee; border-radius:999px; padding:2px 8px; font-size:12px; color:#555; }
+  html { scroll-behavior: smooth; }
+
+  /* Avatar */
+  .avatar { width: 112px; height:112px; border-radius: 9999px; object-fit: cover; display:block;
+            border:3px solid rgba(255,255,255,.75); box-shadow: 0 4px 18px rgba(0,0,0,.15); margin-bottom:14px; }
+</style>
 </head>
 <body>
 
