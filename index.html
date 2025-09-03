@@ -1,179 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ramin Jabbarli — Sociology</title>
-  <meta name="description" content="PhD Candidate in Sociology at the University of Washington. Research on ritual, national belonging, and interethnic solidarity in Iran and Turkey." />
-  <style>
-  :root { --max: 980px; --pad: 20px; --brand: #4b2e83; --brandText: #ffffff; }
-  * { box-sizing: border-box; }
-  body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin:0; color:#222; line-height:1.6; }
-  a { color:#0a66c2; text-decoration: none; }
-  a:hover { text-decoration: underline; }
-
-  /* Nav */
-  .nav { position: sticky; top:0; z-index:10; background: var(--brand); border-bottom:1px solid rgba(255,255,255,.15); }
-  .nav-inner { max-width: var(--max); margin:0 auto; padding: 10px var(--pad); display:flex; align-items:center; justify-content:space-between; gap:10px; color: var(--brandText); }
-  .brand { font-weight:700; letter-spacing:.2px; color: var(--brandText); }
-  .menu { display:flex; gap:14px; flex-wrap:wrap; }
-  .menu a { padding:8px 10px; border-radius:10px; color: var(--brandText); }
-  .menu a:focus, .menu a:active { outline: 2px solid #ffffff; }
-
-  /* Layout */
-  .hero { padding: 48px var(--pad) 20px; border-bottom:1px solid #eee; background: var(--brand); color: var(--brandText); }
-  .hero > .wrap, main { max-width: var(--max); margin: 0 auto; }
-  h1 { margin:0 0 8px; font-size: 32px; }
-  h2 { margin: 26px 0 12px; font-size: 24px; }
-  .sub { color: #e9e6f5; font-size:16px; }
-  section { padding: 26px var(--pad); scroll-margin-top: 70px; }
-  .card { border:1px solid #eee; border-radius:14px; padding:18px; background:#fff; }
-  .two-col { display:grid; gap:18px; grid-template-columns: 1fr; }
-  @media (min-width: 820px){ .two-col { grid-template-columns: 1fr 1fr; } }
-  ul { margin: 8px 0; padding-left: 18px; }
-  .btns { display:flex; gap:12px; flex-wrap:wrap; margin-top:12px; }
-  .btn { display:inline-block; padding:10px 14px; border-radius:12px; text-decoration:none; border:1px solid #0a66c2; color:#0a66c2; background:#fff; }
-  .btn--light { border:1px solid #ffffff; color:#ffffff; background: transparent; }
-  .muted { color:#666; font-size:14px; }
-  footer { text-align:center; padding: 28px 16px; border-top:1px solid #eee; color:#666; font-size:14px; }
-  .list-item { margin-bottom: 10px; }
-  .kv { display:grid; grid-template-columns: 140px 1fr; gap:10px; max-width: 680px; }
-  @media (max-width:500px){ .kv { grid-template-columns: 1fr; } }
-  .chip { display:inline-block; border:1px solid #eee; border-radius:999px; padding:2px 8px; font-size:12px; color:#555; }
-  html { scroll-behavior: smooth; }
-
-  /* Avatar */
-  .avatar { width: 112px; height:112px; border-radius: 9999px; object-fit: cover; display:block;
-            border:3px solid rgba(255,255,255,.75); box-shadow: 0 4px 18px rgba(0,0,0,.15); margin-bottom:14px; }
-</style>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Ramin Jabbarli — Home</title>
+  <meta name="description" content="PhD Candidate in Sociology at the University of Washington."/>
+  <link rel="icon" href="/assets/img/favicon.ico">
+  <link rel="stylesheet" href="/assets/site.css">
 </head>
 <body>
 
-  <!-- Top Nav -->
+  <!-- Header -->
   <nav class="nav" aria-label="Main navigation">
     <div class="nav-inner">
-      <div class="brand">Ramin Jabbarli</div>
+      <div class="brand"><a href="/index.html" style="text-decoration:none;color:inherit">Ramin Jabbarli</a></div>
       <div class="menu">
-        <a href="#about">About</a>
-        <a href="#cv">CV</a>
-        <a href="#pubs">Publications</a>
-        <a href="#teaching">Teaching</a>
-        <a href="#speaking">Speaking</a>
+        <a href="/about.html">About</a>
+        <a href="/publications.html">Publications</a>
+        <a href="/teaching.html">Teaching</a>
+        <a href="/speaking.html">Speaking</a>
+        <a href="/media.html">Media</a>
+        <a href="/contact.html">Contact</a>
       </div>
     </div>
   </nav>
 
   <!-- Hero -->
   <header class="hero">
-    <div class="wrap">
-      <h1>Ramin Jabbarli</h1>
-      <div class="sub">PhD Candidate in Sociology, University of Washington</div>
-      <div class="btns">
-        <a class="btn" href="#cv">View CV</a>
-        <a class="btn" href="https://soc.washington.edu/people/ramin-jabbarli" rel="noopener">UW Profile</a>
-        <a class="btn" href="#contact">Contact</a>
+    <div class="hero-wrap">
+      <div>
+        <h1 class="h-title">Ramin Jabbarli</h1>
+        <p class="h-sub">PhD Candidate in Sociology · University of Washington</p>
+        <p>I study how ritual practices shape national belonging and interethnic solidarity. My dissertation,
+        <em>Veils of Belonging</em>, compares Iran and Turkey using mixed methods.</p>
+        <div class="btns">
+          <a class="btn btn--solid" href="/assets/files/Ramin_Jabbarli_CV.pdf">Download CV</a>
+          <a class="btn" href="/publications.html">Publications</a>
+          <a class="btn" href="/contact.html">Contact</a>
+        </div>
+      </div>
+      <div>
+        <img class="avatar" src="/assets/img/ramin.jpg" alt="Ramin Jabbarli headshot" loading="lazy">
       </div>
     </div>
   </header>
 
   <main>
-    <!-- About -->
-    <section id="about" class="card">
-      <h2>About</h2>
-      <p>
-        Ramin Jabbarli is a PhD candidate in Sociology at the University of Washington. His research examines how ritual practices shape national belonging and interethnic solidarity across dominant and minority groups with a comparative focus on Iran and Turkey. He uses mixed methods that combine archival and newspaper research, text analysis, and statistical modeling of multi-wave survey data.
-      </p>
-      <p class="muted">Languages: English (Fluent), Azerbaijani (Native), Turkish (Fluent), Persian/Farsi (Fluent)</p>
-    </section>
-
-    <!-- CV -->
-    <section id="cv">
-      <h2>CV</h2>
-      <div class="two-col">
-        <div class="card">
-          <h3>Download</h3>
-          <p>Get the current PDF version of my curriculum vitae.</p>
-          <p><a class="btn" href="#TODO-CV-LINK">Download CV (PDF)</a></p>
-          <p class="muted">When ready, upload your PDF to <code>assets/files/</code> and link to <code>/assets/files/Ramin_Jabbarli_CV.pdf</code>.</p>
-        </div>
-        <div class="card">
-          <h3>Quick facts</h3>
-          <div class="kv">
-            <div>Field</div><div>Sociology</div>
-            <div>Focus</div><div>Ritual, identity, nationalism, interethnic relations</div>
-            <div>Institution</div><div>University of Washington</div>
-            <div>Location</div><div>Seattle, WA</div>
-            <div>Email</div><div><a href="mailto:#TODO-EMAIL">#TODO-EMAIL</a></div>
-          </div>
-        </div>
+    <section aria-label="Discover">
+      <div class="discover">
+        <a class="card" href="/teaching.html">
+          <h3>Teaching</h3><p>Courses, syllabi, and videos.</p><span class="more">Open →</span>
+        </a>
+        <a class="card" href="/publications.html">
+          <h3>Publications</h3><p>Peer-reviewed and public scholarship.</p><span class="more">Open →</span>
+        </a>
+        <a class="card" href="/media.html">
+          <h3>Media</h3><p>Interviews and commentary.</p><span class="more">Open →</span>
+        </a>
+        <a class="card" href="/speaking.html">
+          <h3>Speaking</h3><p>Talks and events.</p><span class="more">Open →</span>
+        </a>
       </div>
-    </section>
-
-    <!-- Publications -->
-    <section id="pubs" class="card">
-      <h2>Publications</h2>
-
-      <div class="list-item">
-        <strong>Making and Transcending Boundaries: The Effect of Ritual on Nationalism</strong>.
-        <em>Theory and Society</em> 53(6): 1415–1440, 2024.
-        <a href="https://doi.org/10.1007/s11186-024-09581-4" rel="noopener">DOI</a>
-        <span class="chip">Peer reviewed</span>
-      </div>
-
-      <!-- Add more items with the same pattern -->
-    </section>
-
-    <!-- Teaching -->
-    <section id="teaching">
-      <h2>Teaching</h2>
-      <div class="two-col">
-        <div class="card">
-          <h3>Courses as Instructor</h3>
-          <ul>
-            <li>Contemporary Social Movements (UW)</li>
-            <li>Introduction to Sociological Theory (UW)</li>
-            <li>Sociology in Practice — Community and Civic Internship (UW)</li>
-            <li>Classical Sociological Theories (Hofstra)</li>
-            <li>Global Social Movements (SAIC)</li>
-            <li>Introduction to Sociology (Everett CC)</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Courses as Teaching Assistant</h3>
-          <ul>
-            <li>Statistical Concepts and Methods for the Social Sciences</li>
-            <li>Foundations of Social Inquiry</li>
-            <li>Sociology of Religion</li>
-            <li>Survey of Sociology</li>
-            <li>Sociology of Sport</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- Speaking -->
-    <section id="speaking" class="card">
-      <h2>Speaking</h2>
-      <ul>
-        <li><strong>Ethnic Minorities and Social Movements</strong>, Milliyyet Research Center, Baku, 2025. Invited talk.</li>
-        <li><strong>Making and Transcending Boundaries</strong>, Social Science History Association Annual Meeting, 2024.</li>
-        <li><strong>The Decline of National Identity in Multiethnic Societies</strong> with Steven Pfaff, SSHA, 2024.</li>
-        <li><strong>Social Movements — The Iranian Example</strong>, Gelisim University, Istanbul, 2023. Invited talk.</li>
-        <li>Media interviews with VOA and BBC on identity and protest, 2023–2024.</li>
-      </ul>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="card">
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:#TODO-EMAIL">#TODO-EMAIL</a> · Seattle, WA · <a href="https://github.com/raminjabbarli">GitHub</a> · <a href="https://soc.washington.edu/people/ramin-jabbarli">UW Profile</a></p>
     </section>
   </main>
 
+  <!-- Footer -->
   <footer>
-    © <span id="y"></span> Ramin Jabbarli
+    <div class="f-wrap">
+      <div class="f-col">
+        <h4>Ramin Jabbarli</h4>
+        <p class="muted">PhD Candidate in Sociology · University of Washington</p>
+        <p><a href="mailto:raminj@uw.edu">raminj@uw.edu</a></p>
+      </div>
+      <div class="f-col">
+        <h4>About</h4>
+        <ul><li><a href="/about.html">Biography</a></li><li><a href="/publications.html">Publications</a></li></ul>
+      </div>
+      <div class="f-col">
+        <h4>Teaching</h4>
+        <ul><li><a href="/teaching.html">Courses</a></li><li><a href="/assets/files/Ramin_Jabbarli_CV.pdf">CV (PDF)</a></li></ul>
+      </div>
+      <div class="f-col">
+        <h4>Media</h4>
+        <ul><li><a href="/media.html">Interviews</a></li><li><a href="/speaking.html">Speaking</a></li></ul>
+      </div>
+    </div>
+    <div class="f-foot">© <span id="y"></span> Ramin Jabbarli · All rights reserved.</div>
   </footer>
-
   <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
 </body>
 </html>
