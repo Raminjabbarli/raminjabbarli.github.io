@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Teaching — Ramin Jabbarli</title>
-  <meta name="description" content="Teaching portfolio for Ramin Jabbarli: courses taught, TA experience, and syllabi."/>
+  <title>Research — Ramin Jabbarli</title>
+  <meta name="description" content="Publications, works under review, works in progress, and public scholarship by Ramin Jabbarli."/>
   <link rel="icon" href="/assets/img/favicon.ico">
   <link rel="stylesheet" href="/assets/site.css">
   <style>
@@ -31,17 +31,17 @@
     .footer--light .muted{ color:#6b7280; }
     .footer--light .f-foot{ border-top:1px solid #e5e7eb; color:#6b7280; }
 
-    /* Teaching lists */
-    :root { --line:#e5e7eb; }
-    .teach-section{ margin:28px 0; }
-    .course-list{ list-style:none; padding:0; margin:0; }
-    .course-list li{
-      border:1px solid var(--line); background:#fff; border-radius:12px;
-      padding:14px 16px; margin:10px 0;
+    /* Publications list */
+    .pub-section{ margin: 26px 0; }
+    .pub-section h2{ margin-bottom: 10px; }
+    .pub-list{ list-style: none; padding: 0; margin: 0; }
+    .pub-list li{
+      border:1px solid #e5e7eb; border-radius:12px; padding:14px 16px; margin-bottom:10px;
+      background:#fff;
     }
-    .course-title{ font-weight:700; }
-    .course-meta{ color:#6b7280; margin-top:4px; }
-    .course-links{ margin-top:8px; display:flex; flex-wrap:wrap; gap:8px; }
+    .pub-title{ font-weight:700; }
+    .pub-meta{ color:#6b7280; margin-top:4px; }
+    .pub-links{ margin-top:8px; display:flex; flex-wrap:wrap; gap:8px; }
     .chip{
       display:inline-block; padding:6px 10px; border-radius:999px;
       border:1px solid #d1d5db; text-decoration:none; color:#111827; background:#fff;
@@ -57,8 +57,8 @@
       <div class="brand"><a href="/index.html" style="text-decoration:none;color:inherit">Ramin Jabbarli</a></div>
       <div class="menu">
         <a href="/about.html">About</a>
-        <a href="/research.html">Research</a>
-        <a href="/teaching.html" aria-current="page">Teaching</a>
+        <a href="/research.html" aria-current="page">Research</a>
+        <a href="/teaching.html">Teaching</a>
         <a href="/speaking.html">Speaking</a>
         <a href="/media.html">Media</a>
         <a href="/contact.html">Contact</a>
@@ -70,92 +70,116 @@
   <header class="hero hero--solid">
     <div class="hero-wrap">
       <div>
-        <h1 class="h-title">Teaching</h1>
-        <p class="h-sub">Courses taught, TA experience, and syllabus</p>
+        <h1 class="h-title">Research</h1>
+        <p class="h-sub">Publications, under review, and works in progress</p>
         <div class="btns">
           <a class="btn" href="/assets/Ramin_Jabbarli_CV.pdf">Download CV</a>
-          <a class="btn" href="/contact.html">Contact</a>
+          <a class="btn" href="https://scholar.google.com/citations?user=-PDx5J4AAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
         </div>
       </div>
     </div>
   </header>
 
   <main>
-    <!-- Brief teaching statement (1–2 paragraphs) -->
-    <section class="teach-section">
-      <p>I design classes that connect sociological theory to real-world questions of identity, ritual, protest, and belonging. Across lectures, discussions, and labs, I emphasize transparent methods, concept-to-measurement pipelines, and the habit of linking evidence to claims. Students practice interpreting texts alongside working with data, and they leave with tools to think across levels—from individual meaning to institutional structure.</p>
-      <p>My teaching spans social theory, social movements, and research methods. At the University of Washington, I have served as Instructor of Record and as a Teaching Assistant for courses that range from introductory surveys to statistical methods. I’ve also taught at Hofstra University, the School of the Art Institute of Chicago, and Everett Community College, as well as a community course for a non-profit organization.</p>
-    </section>
-
-    <!-- Courses Taught (Instructor of Record) -->
-    <section class="teach-section" id="instructor">
-      <h2>Courses Taught (Instructor of Record)</h2>
-      <ul class="course-list">
+    <!-- Peer-reviewed articles -->
+    <section class="pub-section" id="peer-reviewed">
+      <h2>Peer-Reviewed Articles</h2>
+      <ul class="pub-list">
         <li>
-          <div class="course-title">SOC 247: Contemporary Social Movements</div>
-          <div class="course-meta">University of Washington — Summer 2020; Spring 2021; Summer 2021; Spring 2022; Summer 2022; Spring 2023; Summer 2023.</div>
-          <div class="course-links">
-            <a class="chip" href="/assets/Syllabi_SOC%20247-Contemporary%20Social%20Movements-Spring%202023.pdf" target="_blank" rel="noopener">Syllabus (PDF)</a>
+          <div class="pub-title">Making and Transcending Boundaries: The Effect of Ritual on Nationalism</div>
+          <div class="pub-meta">Theory and Society 53 (6): 1415–1440, 2024.</div>
+          <div class="pub-links">
+            <a class="chip" href="https://doi.org/10.1007/s11186-024-09581-4" target="_blank" rel="noopener">DOI</a>
+            <!-- Add PDF if you host it: <a class="chip" href="/assets/files/papers/jabbarli_2024_theory_society.pdf">PDF</a> -->
           </div>
         </li>
         <li>
-          <div class="course-title">SOC 404: Sociology in Practice (Community/Civic Internship Program)</div>
-          <div class="course-meta">University of Washington — Winter 2023.</div>
-        </li>
-        <li>
-          <div class="course-title">SOC 316: Introduction to Sociological Theory</div>
-          <div class="course-meta">University of Washington — Summer 2024.</div>
-        </li>
-        <li>
-          <div class="course-title">Classical Sociological Theories</div>
-          <div class="course-meta">Hofstra University — Spring 2025.</div>
-        </li>
-        <li>
-          <div class="course-title">Global Social Movements</div>
-          <div class="course-meta">School of the Art Institute of Chicago — Fall 2021.</div>
-        </li>
-        <li>
-          <div class="course-title">SOC& 101: Introduction to Sociology</div>
-          <div class="course-meta">Everett Community College — Fall 2025.</div>
-        </li>
-        <li>
-          <div class="course-title">Sociology of Social Movements (Community Course)</div>
-          <div class="course-meta">Azerbaijani Civic Nation (Non-Profit Organization), Toronto — Winter 2023 (remote).</div>
+          <div class="pub-title">İran’da Etnik Protestoların Dinamikleri: 2006’tan Bu Yana Azerbaycanlılar Tarafından Düzenlenen Protestolar [The Dynamics of Ethnic Demonstrations in Iran since 2006; Comparing Ahmadinejad and Rouhani’s Terms]</div>
+          <div class="pub-meta">Sosyologca Dergisi, 2021.</div>
         </li>
       </ul>
     </section>
 
-    <!-- Teaching Assistant -->
-    <section class="teach-section" id="ta">
-      <h2>Teaching Assistant</h2>
-      <ul class="course-list">
+    <!-- Under review -->
+    <section class="pub-section" id="under-review">
+      <h2>Under Review</h2>
+      <ul class="pub-list">
         <li>
-          <div class="course-title">SOC 316: Introduction to Sociological Theory</div>
-          <div class="course-meta">University of Washington — Fall 2019; Fall 2022.</div>
+          <div class="pub-title">Testing the Boundaries: Ritual Intensity and National Belonging in Turkey and Iran</div>
+          <div class="pub-meta">Under review at <em>Social Forces</em>.</div>
         </li>
         <li>
-          <div class="course-title">SOC 257: Sociology of Religion</div>
-          <div class="course-meta">University of Washington — Fall 2020.</div>
-        </li>
-        <li>
-          <div class="course-title">STAT 221: Statistical Concepts and Methods for the Social Sciences</div>
-          <div class="course-meta">University of Washington — Fall 2023; Winter 2024; Spring 2024; Fall 2024; Winter 2025; Spring 2025.</div>
-        </li>
-        <li>
-          <div class="course-title">SOC 110: Survey of Sociology</div>
-          <div class="course-meta">University of Washington — Winter 2021.</div>
-        </li>
-        <li>
-          <div class="course-title">SOC 222: Sociology of Sport</div>
-          <div class="course-meta">University of Washington — Winter 2020.</div>
-        </li>
-        <li>
-          <div class="course-title">SOC 300: Foundations of Social Inquiry</div>
-          <div class="course-meta">University of Washington — Fall 2018; Winter 2022.</div>
+          <div class="pub-title">Drawing the Boundaries: The Dynamics of Exclusion and Inclusion through Rituals in Iran</div>
+          <div class="pub-meta">Under review at <em>American Journal of Sociology</em>.</div>
         </li>
       </ul>
     </section>
 
+    <!-- Works in progress -->
+    <section class="pub-section" id="in-progress">
+      <h2>In Progress</h2>
+      <ul class="pub-list">
+        <li>
+          <div class="pub-title">Fragile Boundaries: Rituals, Ethnicities, and the Challenge of National Belonging in Turkey</div>
+          <div class="pub-meta">Manuscript in preparation.</div>
+        </li>
+        <li>
+          <div class="pub-title">Drought and Disparity: How Ethnic Grievances Shape Perceptions of Water Scarcity</div>
+          <div class="pub-meta">Manuscript in preparation.</div>
+        </li>
+        <li>
+          <div class="pub-title">The Decline of National Identity in Multiethnic Societies: Religion and Nation in Iran and Belgium</div>
+          <div class="pub-meta">with Steven Pfaff · Manuscript in preparation.</div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Public scholarship & other publications -->
+    <section class="pub-section" id="public-scholarship">
+      <h2>Public Scholarship & Other Publications</h2>
+      <ul class="pub-list">
+        <li>
+          <div class="pub-title">Collective Action</div>
+          <div class="pub-meta">with Steven Pfaff. In <em>International Encyclopedia of Civil Society</em>, 2023. Springer.</div>
+        </li>
+        <li>
+          <div class="pub-title">Arab Protests in Iran: Water Crisis or Systemic Racism</div>
+          <div class="pub-meta"><em>The National Interest</em>, July 25, 2021.</div>
+        </li>
+        <li>
+          <div class="pub-title">The Nagorno-Karabakh War Widens the Ethnic Divide in Iran</div>
+          <div class="pub-meta"><em>The National Interest</em>, October 26, 2020.</div>
+        </li>
+        <li>
+          <div class="pub-title">Covid-19: Hitting Iran’s Minorities Harder</div>
+          <div class="pub-meta">with Brenda Shafer. <em>Middle East Institute</em>, April 17, 2020.</div>
+        </li>
+        <li>
+          <div class="pub-title">Adlar və kişilərin ürkək dominantlığı [On Cross-dressing and Male Domination]</div>
+          <div class="pub-meta">BBC Azərbaycanca, September 12, 2016.</div>
+        </li>
+        <li>
+          <div class="pub-title">Rəsulzadə və inqilabçı sosializm haqqında düşüncələr [On Resulzade’s Social Thoughts]</div>
+          <div class="pub-meta">BBC Azərbaycanca, January 31, 2017.</div>
+        </li>
+        <li>
+          <div class="pub-title">İranda etniklər farscanı ləhcəylə danışdığı üçün niyə utanırlar [Double Consciousness and Accentism in Iran]</div>
+          <div class="pub-meta">AzadlıqRadiosu, November 15, 2015.</div>
+        </li>
+        <li>
+          <div class="pub-title">İran feministlərində irqçilik izi [Racism and Persian Feminists]</div>
+          <div class="pub-meta">Makroblog, March 14, 2017.</div>
+        </li>
+        <li>
+          <div class="pub-title">Kəsişən kimliklər [The Clashing Identities]</div>
+          <div class="pub-meta">Makroblog, January 25, 2017.</div>
+        </li>
+        <li>
+          <div class="pub-title">The Triggering and Deterring Factors of Recent Protests in Iran</div>
+          <div class="pub-meta"><em>Modern Diplomacy</em>, December 28, 2017.</div>
+        </li>
+      </ul>
+    </section>
   </main>
 
   <!-- Footer (light gray) -->
@@ -170,8 +194,8 @@
         <h4>Site</h4>
         <ul>
           <li><a href="/about.html">About</a></li>
-          <li><a href="/research.html">Research</a></li>
-          <li><a href="/teaching.html" aria-current="page">Teaching</a></li>
+          <li><a href="/research.html" aria-current="page">Research</a></li>
+          <li><a href="/teaching.html">Teaching</a></li>
           <li><a href="/speaking.html">Speaking</a></li>
           <li><a href="/media.html">Media</a></li>
           <li><a href="/contact.html">Contact</a></li>
@@ -181,7 +205,6 @@
         <h4>Files</h4>
         <ul>
           <li><a href="/assets/Ramin_Jabbarli_CV.pdf">CV (PDF)</a></li>
-          <li><a href="/assets/files/syllabi/Syllabi_SOC%20247-Contemporary%20Social%20Movements-Spring%202023.pdf" target="_blank" rel="noopener">SOC 247 Syllabus (PDF)</a></li>
         </ul>
       </div>
     </div>
