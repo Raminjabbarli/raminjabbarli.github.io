@@ -4,18 +4,45 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>About — Ramin Jabbarli</title>
+  <meta name="description" content="About Ramin Jabbarli, PhD candidate in Sociology at the University of Washington."/>
   <link rel="icon" href="/assets/img/favicon.ico">
   <link rel="stylesheet" href="/assets/site.css">
+  <style>
+    /* Fonts: Harvard-style web-safe stacks */
+    html, body { font-family: Arial, Helvetica, sans-serif; line-height: 1.65; }
+    h1, h2, h3, .brand, .h-title { font-family: Georgia, "Times New Roman", Times, serif; letter-spacing:.1px; }
+
+    /* Top nav + page header color */
+    .nav{ background:#044B4D; }
+    .nav .brand a, .nav .menu a{ color:#fff; }
+    .nav .menu a:hover{ text-decoration:underline; }
+    .hero--solid{
+      color:#fff; background:#044B4D;
+      border-bottom:1px solid rgba(255,255,255,.25);
+    }
+    .hero--solid .h-sub{ color:rgba(255,255,255,.9); }
+    .hero--solid .btn{ border-color:#fff; color:#fff; background:transparent; }
+    .hero--solid .btn:hover{ background:rgba(255,255,255,.12); text-decoration:none; }
+
+    /* Light gray footer */
+    .footer--light{
+      background:#f3f4f6; color:#4b5563;
+    }
+    .footer--light a{ color:#1f2937; }
+    .footer--light h4{ color:#111827; }
+    .footer--light .muted{ color:#6b7280; }
+    .footer--light .f-foot{ border-top:1px solid #e5e7eb; color:#6b7280; }
+  </style>
 </head>
 <body>
 
-  <!-- Header -->
+  <!-- Header / Nav -->
   <nav class="nav" aria-label="Main navigation">
     <div class="nav-inner">
       <div class="brand"><a href="/index.html" style="text-decoration:none;color:inherit">Ramin Jabbarli</a></div>
       <div class="menu">
         <a href="/about.html" aria-current="page">About</a>
-        <a href="/publications.html">Publications</a>
+        <a href="/research.html">Research</a>
         <a href="/teaching.html">Teaching</a>
         <a href="/speaking.html">Speaking</a>
         <a href="/media.html">Media</a>
@@ -24,30 +51,32 @@
     </div>
   </nav>
 
-  <header class="hero">
+  <!-- Page header (no image) -->
+  <header class="hero hero--solid">
     <div class="hero-wrap">
       <div>
         <h1 class="h-title">About</h1>
-        <p class="h-sub">Biography and research focus</p>
-      </div>
-      <div>
-        <img class="avatar" src="/assets/ramin.jpg" alt="Ramin Jabbarli headshot" loading="lazy">
+        <p class="h-sub">Bio & research focus</p>
+        <div class="btns">
+          <a class="btn" href="/assets/Ramin_Jabbarli_CV.pdf">Download CV</a>
+          <a class="btn" href="/research.html">See Research</a>
+        </div>
       </div>
     </div>
   </header>
 
   <main>
+    <!-- First-person bio -->
     <section>
-      <h2>Biography</h2>
-      <p>Ramin Jabbarli is a PhD candidate in Sociology at the University of Washington. His research examines how ritual practices shape national belonging and interethnic solidarity across dominant and minority groups, with a comparative focus on Iran and Turkey. His dissertation, <em>Veils of Belonging: Ritual, Identity, and Nationhood in the Modern Middle East</em>, investigates when and how religious rituals are linked to national attachment, boundary-making, and cross-group cooperation. He uses a mixed-methods design that combines archival and newspaper research, computational text analysis, and statistical modeling of multi-wave survey data.</p>
-      <p>Ramin’s peer-reviewed article, “Making and Transcending Boundaries: The Effect of Ritual on Nationalism,” appeared in <em>Theory and Society</em> in 2024. He also contributes public scholarship on identity, protest, and environmental inequality, with essays and commentary for venues such as the Middle East Institute and <em>The National Interest</em>, as well as interviews with Voice of America and the BBC.</p>
-      <p>He teaches courses in social theory, social movements, and research methods. At the University of Washington, he has served as Instructor of Record for Contemporary Social Movements, Introduction to Sociological Theory, and Sociology in Practice. He has also taught Classical Sociological Theories at Hofstra University, Global Social Movements at the School of the Art Institute of Chicago, and Introduction to Sociology at Everett Community College.</p>
-      <p>His recognitions include the Roshan Cultural Heritage Institute Fellowship for Excellence in Persian Studies, the Herbert L. Costner Award from UW Sociology, and an honorable mention from the National Science Foundation Graduate Research Fellowship Program. In professional service, he serves as President of the Foundation for Inclusive Society and Chief Editor of EtekYazi.com. He earned his BA and MA in Sociology at the University of Washington, after prior study at Green River College, and he also holds a BA in Business Administration from a university in Iran. He is a native speaker of Azerbaijani and fluent in English, Turkish, and Persian/Farsi.</p>
+      <p>I am a PhD candidate in Sociology at the University of Washington. I study how ritual practices shape national belonging and interethnic solidarity across dominant and minority groups, with a comparative focus on Iran and Turkey. My dissertation, <em>Veils of Belonging: Ritual, Identity, and Nationhood in the Modern Middle East</em>, investigates when and how religious rituals are linked to national attachment, boundary-making, and cross-group cooperation. I use a mixed-methods design that combines archival and newspaper research, computational text analysis, and statistical modeling of multi-wave survey data.</p>
+      <p>My peer-reviewed article, “Making and Transcending Boundaries: The Effect of Ritual on Nationalism,” appeared in <em>Theory and Society</em> in 2024. I also contribute public scholarship on identity, protest, and environmental inequality, with essays and commentary for venues such as the Middle East Institute and <em>The National Interest</em>, as well as interviews with Voice of America and the BBC.</p>
+      <p>I teach courses in social theory, social movements, and research methods. At the University of Washington, I have served as Instructor of Record for Contemporary Social Movements, Introduction to Sociological Theory, and Sociology in Practice. I have also taught Classical Sociological Theories at Hofstra University, Global Social Movements at the School of the Art Institute of Chicago, and Introduction to Sociology at Everett Community College.</p>
+      <p>My recognitions include the Roshan Cultural Heritage Institute Fellowship for Excellence in Persian Studies, the Herbert L. Costner Award from UW Sociology, and an honorable mention from the National Science Foundation Graduate Research Fellowship Program. In professional service, I serve as President of the Foundation for Inclusive Society and Chief Editor of EtekYazi.com. I earned my BA and MA in Sociology at the University of Washington, after prior study at Green River College, and I also hold a BA in Business Administration from a university in Iran. I am a native speaker of Azerbaijani and fluent in English, Turkish, and Persian/Farsi.</p>
     </section>
   </main>
 
-  <!-- Footer -->
-  <footer>
+  <!-- Footer (light gray) -->
+  <footer class="footer--light">
     <div class="f-wrap">
       <div class="f-col">
         <h4>Ramin Jabbarli</h4>
@@ -55,29 +84,26 @@
         <p><a href="mailto:raminj@uw.edu">raminj@uw.edu</a></p>
       </div>
       <div class="f-col">
-        <h4>About</h4>
+        <h4>Site</h4>
         <ul>
-          <li><a href="/about.html">Biography</a></li>
-          <li><a href="/publications.html">Publications</a></li>
-        </ul>
-      </div>
-      <div class="f-col">
-        <h4>Teaching</h4>
-        <ul>
-          <li><a href="/teaching.html">Courses</a></li>
-          <li><a href="/assets/Ramin_Jabbarli_CV.pdf">CV (PDF)</a></li>
-        </ul>
-      </div>
-      <div class="f-col">
-        <h4>Media</h4>
-        <ul>
-          <li><a href="/media.html">Interviews</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/research.html">Research</a></li>
+          <li><a href="/teaching.html">Teaching</a></li>
           <li><a href="/speaking.html">Speaking</a></li>
+          <li><a href="/media.html">Media</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h4>Files</h4>
+        <ul>
+          <li><a href="/assets/Ramin_Jabbarli_CV.pdf">CV (PDF)</a></li>
         </ul>
       </div>
     </div>
     <div class="f-foot">© <span id="y"></span> Ramin Jabbarli · All rights reserved.</div>
   </footer>
+
   <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
 </body>
 </html>
