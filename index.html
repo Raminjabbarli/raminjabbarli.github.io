@@ -36,16 +36,31 @@
     }
     .cta-btn:hover{ opacity:.95; text-decoration:none; }
 
+    /* ===== Main hero buttons (Download CV, Research, Contact) ===== */
+    .btns .btn, 
+    .btns .btn.btn--solid {
+      background:#66023C;    /* Tyrian purple */
+      color:#fff;
+      border:1px solid #66023C;
+    }
+    .btns .btn:hover, 
+    .btns .btn.btn--solid:hover {
+      opacity:.9; 
+      text-decoration:none;
+    }
+
     /* ===== Social icon badges (in hero, under main buttons) ===== */
     .socials-icons{ display:flex; gap:12px; flex-wrap:wrap; margin-top:14px; }
     .iconbtn{
       display:inline-flex; align-items:center; justify-content:center;
       width:48px; height:48px; border-radius:999px;
-      background:#044B4D; color:#fff; border:1px solid #044B4D;
+      background:#1C1C1C;       /* grey background */
+      color:#fff; 
+      border:1px solid #1C1C1C; /* grey border */
       font-weight:800; letter-spacing:.2px; text-decoration:none; transition:.18s ease;
-      box-shadow:0 6px 18px rgba(4,75,77,.20);
+      box-shadow:0 6px 18px rgba(28,28,28,.20); /* grey shadow */
     }
-    .iconbtn:hover{ transform:translateY(-1px); box-shadow:0 10px 24px rgba(4,75,77,.28); text-decoration:none; }
+    .iconbtn:hover{ transform:translateY(-1px); box-shadow:0 10px 24px rgba(28,28,28,.28); text-decoration:none; }
     .iconbtn .small{ font-size:12px; font-weight:800; }
     .sr-only{ position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,1,1); white-space:nowrap; border:0; }
   </style>
