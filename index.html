@@ -11,10 +11,7 @@
     /* ===== Base tokens ===== */
     :root{ --line:#e5e7eb; }
 
-    /* ===== Harvard-style web fonts =====
-       Headings: Georgia stack (Harvard recommended system serif)
-       Body: Arial stack (Harvard recommended system sans)
-    */
+    /* ===== Harvard-style web fonts ===== */
     html, body { font-family: Arial, Helvetica, sans-serif; line-height: 1.65; }
     h1, h2, h3, .brand, .h-title { font-family: Georgia, "Times New Roman", Times, serif; letter-spacing:.1px; }
 
@@ -39,16 +36,16 @@
     }
     .cta-btn:hover{ opacity:.95; text-decoration:none; }
 
-    /* ===== Social icon badges (clickable) ===== */
-    .socials-icons{ display:flex; gap:10px; flex-wrap:wrap; margin-top:14px; }
+    /* ===== Social icon badges (in hero, under main buttons) ===== */
+    .socials-icons{ display:flex; gap:12px; flex-wrap:wrap; margin-top:14px; }
     .iconbtn{
       display:inline-flex; align-items:center; justify-content:center;
-      width:44px; height:44px; border-radius:999px;
-      border:1px solid var(--line); background:#fff; color:#044B4D;
-      font-weight:800; letter-spacing:.2px; text-decoration:none; transition:.2s;
-      box-shadow:0 2px 8px rgba(0,0,0,.04);
+      width:48px; height:48px; border-radius:999px;
+      background:#044B4D; color:#fff; border:1px solid #044B4D;
+      font-weight:800; letter-spacing:.2px; text-decoration:none; transition:.18s ease;
+      box-shadow:0 6px 18px rgba(4,75,77,.20);
     }
-    .iconbtn:hover{ background:#044B4D; color:#fff; border-color:#044B4D; text-decoration:none; }
+    .iconbtn:hover{ transform:translateY(-1px); box-shadow:0 10px 24px rgba(4,75,77,.28); text-decoration:none; }
     .iconbtn .small{ font-size:12px; font-weight:800; }
     .sr-only{ position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,1,1); white-space:nowrap; border:0; }
   </style>
@@ -83,6 +80,25 @@
           <a class="btn" href="/research.html">Research</a>
           <a class="btn" href="/contact.html">Contact</a>
         </div>
+
+        <!-- Icon badges moved here (under main buttons) -->
+        <div class="socials-icons" aria-label="Profile links">
+          <a class="iconbtn" href="https://x.com/raminjabbarli" target="_blank" rel="noopener" title="X / Twitter">
+            <span aria-hidden="true">𝕏</span><span class="sr-only">X (Twitter)</span>
+          </a>
+          <a class="iconbtn" href="https://scholar.google.com/citations?user=-PDx5J4AAAAJ&hl=en" target="_blank" rel="noopener" title="Google Scholar">
+            <span aria-hidden="true">G</span><span class="sr-only">Google Scholar</span>
+          </a>
+          <a class="iconbtn" href="https://orcid.org/0000-0003-0182-1591" target="_blank" rel="noopener" title="ORCID">
+            <span aria-hidden="true" class="small">iD</span><span class="sr-only">ORCID</span>
+          </a>
+          <a class="iconbtn" href="https://www.linkedin.com/in/ramin-jabbarli/" target="_blank" rel="noopener" title="LinkedIn">
+            <span aria-hidden="true">in</span><span class="sr-only">LinkedIn</span>
+          </a>
+          <a class="iconbtn" href="https://soc.washington.edu/people/ramin-jabbarli" target="_blank" rel="noopener" title="UW Profile">
+            <span aria-hidden="true">W</span><span class="sr-only">UW Profile</span>
+          </a>
+        </div>
       </div>
 
       <!-- Photo -->
@@ -100,25 +116,6 @@
       <p>My peer-reviewed article, “Making and Transcending Boundaries: The Effect of Ritual on Nationalism,” appeared in <em>Theory and Society</em> in 2024. I also contribute public scholarship on identity, protest, and environmental inequality, with essays and commentary for venues such as the Middle East Institute and <em>The National Interest</em>, as well as interviews with Voice of America and the BBC.</p>
       <p>I teach courses in social theory, social movements, and research methods. At the University of Washington, I have served as Instructor of Record for Contemporary Social Movements, Introduction to Sociological Theory, and Sociology in Practice. I have also taught Classical Sociological Theories at Hofstra University, Global Social Movements at the School of the Art Institute of Chicago, and Introduction to Sociology at Everett Community College.</p>
       <p>My recognitions include the Roshan Cultural Heritage Institute Fellowship for Excellence in Persian Studies, the Herbert L. Costner Award from UW Sociology, and an honorable mention from the National Science Foundation Graduate Research Fellowship Program. In professional service, I serve as President of the Foundation for Inclusive Society and Chief Editor of EtekYazi.com. I earned my BA and MA in Sociology at the University of Washington, after prior study at Green River College, and I also hold a BA in Business Administration from a university in Iran. I am a native speaker of Azerbaijani and fluent in English, Turkish, and Persian/Farsi.</p>
-
-      <!-- Icon badges -->
-      <div class="socials-icons" aria-label="Profile links">
-        <a class="iconbtn" href="https://x.com/raminjabbarli" target="_blank" rel="noopener" title="X / Twitter">
-          <span aria-hidden="true">𝕏</span><span class="sr-only">X (Twitter)</span>
-        </a>
-        <a class="iconbtn" href="https://scholar.google.com/citations?user=-PDx5J4AAAAJ&hl=en" target="_blank" rel="noopener" title="Google Scholar">
-          <span aria-hidden="true">G</span><span class="sr-only">Google Scholar</span>
-        </a>
-        <a class="iconbtn" href="https://orcid.org/0000-0003-0182-1591" target="_blank" rel="noopener" title="ORCID">
-          <span aria-hidden="true" class="small">iD</span><span class="sr-only">ORCID</span>
-        </a>
-        <a class="iconbtn" href="https://www.linkedin.com/in/ramin-jabbarli/" target="_blank" rel="noopener" title="LinkedIn">
-          <span aria-hidden="true">in</span><span class="sr-only">LinkedIn</span>
-        </a>
-        <a class="iconbtn" href="https://soc.washington.edu/people/ramin-jabbarli" target="_blank" rel="noopener" title="UW Profile">
-          <span aria-hidden="true">W</span><span class="sr-only">UW Profile</span>
-        </a>
-      </div>
     </section>
 
     <!-- Big, visible section buttons -->
