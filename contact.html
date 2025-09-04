@@ -1,1 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Contact — Ramin Jabbarli</title>
+  <meta name="description" content="Contact details for Ramin Jabbarli at the University of Washington."/>
+  <link rel="icon" href="/assets/img/favicon.ico">
+  <link rel="stylesheet" href="/assets/site.css">
+  <style>
+    /* Fonts (Harvard-style web-safe stacks) */
+    html, body { font-family: Arial, Helvetica, sans-serif; line-height: 1.65; }
+    h1, h2, h3, .brand, .h-title { font-family: Georgia, "Times New Roman", Times, serif; letter-spacing:.1px; }
+
+    /* Header color */
+    .nav{ background:#044B4D; }
+    .nav .brand a, .nav .menu a{ color:#fff; }
+    .nav .menu a:hover{ text-decoration:underline; }
+    .hero--solid{
+      color:#fff; background:#044B4D;
+      border-bottom:1px solid rgba(255,255,255,.25);
+    }
+    .hero--solid .h-sub{ color:rgba(255,255,255,.9); }
+    .hero--solid .btn{ border-color:#fff; color:#fff; background:transparent; }
+    .hero--solid .btn:hover{ background:rgba(255,255,255,.12); text-decoration:none; }
+
+    /* Light gray footer */
+    .footer--light{
+      background:#f3f4f6; color:#4b5563;
+    }
+    .footer--light a{ color:#1f2937; }
+    .footer--light h4{ color:#111827; }
+    .footer--light .muted{ color:#6b7280; }
+    .footer--light .f-foot{ border-top:1px solid #e5e7eb; color:#6b7280; }
+
+    /* Contact layout */
+    .contact-wrap{ display:grid; gap:18px; max-width:900px; }
+    .contact-card{
+      border:1px solid #e5e7eb; border-radius:12px; padding:18px;
+      box-shadow:0 2px 10px rgba(0,0,0,.03); background:#fff;
+    }
+    .contact-card h3{ margin-top:0; }
+    .contact-actions{ display:flex; flex-wrap:wrap; gap:10px; margin-top:10px; }
+    .btn--soft{
+      display:inline-block; padding:10px 14px; border-radius:10px;
+      border:1px solid #d1d5db; background:#fff; text-decoration:none; color:#111827;
+    }
+    .btn--soft:hover{ background:#f9fafb; text-decoration:none; }
+  </style>
+</head>
+<body>
+
+  <!-- Header / Nav -->
+  <nav class="nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <div class="brand"><a href="/index.html" style="text-decoration:none;color:inherit">Ramin Jabbarli</a></div>
+      <div class="menu">
+        <a href="/about.html">About</a>
+        <a href="/research.html">Research</a>
+        <a href="/teaching.html">Teaching</a>
+        <a href="/speaking.html">Speaking</a>
+        <a href="/media.html">Media</a>
+        <a href="/contact.html" aria-current="page">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page header (no image) -->
+  <header class="hero hero--solid">
+    <div class="hero-wrap">
+      <div>
+        <h1 class="h-title">Contact</h1>
+        <p class="h-sub">Get in touch via email or mail</p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="contact-wrap">
+      <!-- Email -->
+      <div class="contact-card">
+        <h3>Email</h3>
+        <p id="email-text"><a href="mailto:raminj@uw.edu">raminj@uw.edu</a></p>
+        <div class="contact-actions">
+          <a class="btn btn--soft" href="mailto:raminj@uw.edu">Open in Mail</a>
+          <button class="btn btn--soft" type="button" onclick="copyText('#email-text')">Copy email</button>
+        </div>
+      </div>
+
+      <!-- Address -->
+      <div class="contact-card">
+        <h3>Mailing Address</h3>
+        <address id="addr-text">
+          University of Washington, Department of Sociology<br>
+          Savery Hall 211, 2nd Floor<br>
+          4100 Spokane Lane<br>
+          Mail code 353340<br>
+          Seattle, WA 98195
+        </address>
+        <div class="contact-actions">
+          <a class="btn btn--soft" target="_blank" rel="noopener"
+             href="https://www.google.com/maps/search/?api=1&query=University%20of%20Washington%20Savery%20Hall%20211%204100%20Spokane%20Lane%20Seattle%20WA%2098195">
+            Open in Maps
+          </a>
+          <button class="btn btn--soft" type="button" onclick="copyText('#addr-text')">Copy address</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer (light gray) -->
+  <footer class="footer--light">
+    <div class="f-wrap">
+      <div class="f-col">
+        <h4>Ramin Jabbarli</h4>
+        <p class="muted">PhD Candidate in Sociology · University of Washington</p>
+        <p><a href="mailto:raminj@uw.edu">raminj@uw.edu</a></p>
+      </div>
+      <div class="f-col">
+        <h4>Site</h4>
+        <ul>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/research.html">Research</a></li>
+          <li><a href="/teaching.html">Teaching</a></li>
+          <li><a href="/speaking.html">Speaking</a></li>
+          <li><a href="/media.html">Media</a></li>
+          <li><a href="/contact.html" aria-current="page">Contact</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h4>Files</h4>
+        <ul>
+          <li><a href="/assets/Ramin_Jabbarli_CV.pdf">CV (PDF)</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="f-foot">© <span id="y"></span> Ramin Jabbarli · All rights reserved.</div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent=new Date().getFullYear();
+
+    function copyText(selector){
+      var el = document.querySelector(selector);
+      var text = (el.tagName.toLowerCase()==='address') ? el.innerText : el.textContent;
+      navigator.clipboard.writeText(text.trim()).then(function(){}, function(){});
+    }
+  </script>
+</body>
+</html>
 
