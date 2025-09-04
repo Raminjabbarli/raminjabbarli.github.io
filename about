@@ -1,4 +1,18 @@
 <!DOCTYPE html><html lang="en"><head>
+<nav class="nav" aria-label="Main navigation">
+  <div class="nav-inner">
+    <div class="brand"><a href="/index.html" style="text-decoration:none;color:inherit">Ramin Jabbarli</a></div>
+    <div class="menu">
+      <a href="/about.html">About</a>
+      <a href="/publications.html">Publications</a>
+      <a href="/teaching.html">Teaching</a>
+      <a href="/speaking.html">Speaking</a>
+      <a href="/media.html">Media</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</nav>
+
 <meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>About — Ramin Jabbarli</title>
 <link rel="stylesheet" href="/assets/site.css">
