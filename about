@@ -24,7 +24,7 @@
 
 <header class="hero"><div class="hero-wrap">
   <div><h1 class="h-title">About</h1><p class="h-sub">Biography and research focus</p></div>
-  <div><img class="avatar" src="/assets/img/ramin.jpg" alt="Ramin Jabbarli" loading="lazy"></div>
+  <div><img class="avatar" src="/assets/ramin.jpg" alt="Ramin Jabbarli" loading="lazy"></div>
 </div></header>
 
 <main><section>
@@ -43,7 +43,7 @@
       <div>Institution</div><div>University of Washington</div>
       <div>Location</div><div>Seattle, WA</div>
       <div>Email</div><div><a href="mailto:raminj@uw.edu">raminj@uw.edu</a></div>
-      <div>CV</div><div><a href="/assets/files/Ramin_Jabbarli_CV.pdf">Download PDF</a></div>
+      <div>CV</div><div><a href="/assets/Ramin_Jabbarli_CV.pdf">Download PDF</a></div>
     </div>
   </section>
 </main>
