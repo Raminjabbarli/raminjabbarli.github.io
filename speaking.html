@@ -4,42 +4,40 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>Speaking — Ramin Jabbarli</title>
-  <meta name="description" content="Talks, invited lectures, and events by Ramin Jabbarli."/>
+  <meta name="description" content="Talks, invited lectures, conference presentations, and media by Ramin Jabbarli."/>
   <link rel="icon" href="/assets/img/favicon.ico">
   <link rel="stylesheet" href="/assets/site.css">
   <style>
-    /* Modern gradient hero (uses theme vars) */
-    .hero--modern{
+    /* Solid-color header (no image) */
+    .hero--solid{
       color:#fff;
-      background:
-        radial-gradient(800px 400px at 0% 0%, rgba(255,255,255,.10), transparent 60%),
-        radial-gradient(700px 500px at 100% 0%, rgba(255,255,255,.08), transparent 55%),
-        linear-gradient(135deg, var(--brand1), var(--brand2));
-      border-bottom: 1px solid rgba(255,255,255,.15);
+      background:#044B4D; /* requested color */
+      border-bottom:1px solid rgba(255,255,255,.25);
     }
-    .hero--modern .h-sub{ color:rgba(255,255,255,.9); }
-    .hero--modern .btn{ border-color:#fff; color:#fff; background:transparent; }
-    .hero--modern .btn:hover{ background:rgba(255,255,255,.1); text-decoration:none; }
+    .hero--solid .h-sub{ color:rgba(255,255,255,.9); }
+    .hero--solid .btn{ border-color:#fff; color:#fff; background:transparent; }
+    .hero--solid .btn:hover{ background:rgba(255,255,255,.12); text-decoration:none; }
 
-    /* Brand footer */
-    .footer--brand{
-      background: linear-gradient(135deg, var(--brand1), var(--brand2));
-      color:#fff;
+    /* Solid brand footer */
+    .footer--solid{
+      background:#044B4D; color:#fff;
     }
-    .footer--brand .f-wrap, .footer--brand .f-foot { color: #f5f5f5; }
-    .footer--brand a{ color:#fff; }
-    .footer--brand h4{ color:#fff; }
-    .footer--brand .muted{ color:rgba(255,255,255,.85); }
-    .footer--brand .f-foot{ border-top: 1px solid rgba(255,255,255,.25); }
+    .footer--solid a{ color:#fff; }
+    .footer--solid h4{ color:#fff; }
+    .footer--solid .muted{ color:rgba(255,255,255,.85); }
+    .footer--solid .f-foot{ border-top:1px solid rgba(255,255,255,.25); color:#f3f3f3; }
 
     /* Video embeds */
     .video { max-width: 820px; }
-    .video .frame { aspect-ratio:16/9; width:100%; border:0; border-radius:12px; box-shadow:0 8px 28px rgba(0,0,0,.08); }
+    .video .frame {
+      aspect-ratio:16/9; width:100%; border:0;
+      border-radius:12px; box-shadow:0 8px 28px rgba(0,0,0,.08);
+    }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
+  <!-- Header / top nav -->
   <nav class="nav" aria-label="Main navigation">
     <div class="nav-inner">
       <div class="brand">
@@ -56,8 +54,8 @@
     </div>
   </nav>
 
-  <!-- Modern gradient hero -->
-  <header class="hero hero--modern">
+  <!-- Solid-color page header -->
+  <header class="hero hero--solid">
     <div class="hero-wrap">
       <div>
         <h1 class="h-title">Speaking</h1>
@@ -71,16 +69,7 @@
   </header>
 
   <main>
-    <!-- Upcoming -->
-    <section>
-      <h2>Upcoming</h2>
-      <div class="card">
-        <h3>Ethnic Minorities and Social Movements</h3>
-        <p class="muted">Milliyyet Research Center · Baku, Azerbaijan · 2025 · Invited talk</p>
-      </div>
-    </section>
-
-    <!-- Invited Talks -->
+    <!-- Invited Talks (from CV) -->
     <section>
       <h2>Invited Talks</h2>
 
@@ -92,7 +81,7 @@
       <div class="card">
         <h3>History and Current State of Ethnic Discrimination in Iran</h3>
         <p class="muted">32nd Economic Forum · Karpacz, Poland · September 7, 2023</p>
-        <p class="muted">Panel: “Human Rights Situation in Iran: The Case of Ethnic Azerbaijanis” (Topchubashov Center). Remarks addressed long-standing discriminatory policies—Persianization, toponym changes, lack of mother-tongue education, and economic exclusion—and nation-building anchored to Shi‘a identity.</p>
+        <p class="muted">Panel: “Human Rights Situation in Iran: The Case of Ethnic Azerbaijanis.”</p>
       </div>
 
       <div class="card">
@@ -101,13 +90,13 @@
       </div>
     </section>
 
-    <!-- Conference Presentations -->
+    <!-- Conference Presentations (from CV) -->
     <section>
       <h2>Conference Presentations</h2>
 
       <div class="card">
         <h3>Making and Transcending Boundaries: The Effect of Ritual on Nationalism</h3>
-        <p class="muted">Social Science History Association Annual Meeting (SSHA) · 2024</p>
+        <p class="muted">Social Science History Association (SSHA) Annual Meeting · 2024</p>
       </div>
 
       <div class="card">
@@ -148,10 +137,10 @@
       </div>
 
       <div class="card video">
-        <h3>Interview with Akinchi — The Role of Grievance in Contentious Politics</h3>
+        <h3>Interview with Akinchi — The Impact of Grievance on Mobilization</h3>
         <iframe class="frame"
           src="https://www.youtube.com/embed/Q4WSfR4J8yI?start=7"
-          title="Akinchi Interview — Grievance and Contentious Politics"
+          title="Akinchi Interview — The Impact of Grievance on Mobilization"
           allowfullscreen></iframe>
       </div>
 
@@ -162,11 +151,16 @@
           title="BBC Interview — Iran and Azerbaijan Relations"
           allowfullscreen></iframe>
       </div>
+
+      <div class="card">
+        <h3>Interview with Voice of America — Human Rights Violations in Iran-Azerbaijan: Commentary on the New Report</h3>
+        <p class="muted">2024 · (Add link when available)</p>
+      </div>
     </section>
   </main>
 
-  <!-- Footer (brand gradient) -->
-  <footer class="footer--brand">
+  <!-- Footer (solid color) -->
+  <footer class="footer--solid">
     <div class="f-wrap">
       <div class="f-col">
         <h4>Ramin Jabbarli</h4>
