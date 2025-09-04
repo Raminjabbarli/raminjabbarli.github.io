@@ -7,6 +7,21 @@
   <meta name="description" content="Talks, invited lectures, and events by Ramin Jabbarli."/>
   <link rel="icon" href="/assets/img/favicon.ico">
   <link rel="stylesheet" href="/assets/site.css">
+  <style>
+    /* Modern gradient hero (no photo) */
+    .hero--modern{
+      color:#fff;
+      background:
+        radial-gradient(800px 400px at 0% 0%, rgba(255,255,255,.10), transparent 60%),
+        radial-gradient(700px 500px at 100% 0%, rgba(255,255,255,.08), transparent 55%),
+        linear-gradient(135deg, #4b2e83, #0a66c2);
+      border-bottom: 1px solid rgba(255,255,255,.15);
+    }
+    .hero--modern .h-sub{ color:rgba(255,255,255,.9); }
+    .hero--modern .hero-wrap{ grid-template-columns: 1fr; } /* keep single column */
+    .hero--modern .btn{ border-color:#fff; color:#fff; background:transparent; }
+    .hero--modern .btn:hover{ background:rgba(255,255,255,.1); text-decoration:none; }
+  </style>
 </head>
 <body>
 
@@ -27,8 +42,8 @@
     </div>
   </nav>
 
-  <!-- Hero -->
-  <header class="hero">
+  <!-- Modern gradient hero (no image) -->
+  <header class="hero hero--modern">
     <div class="hero-wrap">
       <div>
         <h1 class="h-title">Speaking</h1>
@@ -38,99 +53,16 @@
           <a class="btn" href="/media.html">Media & Interviews</a>
         </div>
       </div>
-      <div>
-        <img class="avatar" src="/assets/ramin.jpg" alt="Ramin Jabbarli headshot" loading="lazy">
-      </div>
     </div>
   </header>
 
   <main>
-    <!-- Upcoming (edit as needed) -->
+    <!-- Upcoming -->
     <section>
       <h2>Upcoming</h2>
       <div class="card">
         <h3>Ethnic Minorities and Social Movements</h3>
         <p class="muted">Milliyyet Research Center · Baku · 2025 · Invited talk</p>
-        <!-- Add optional materials links when available
+        <!-- Optional materials:
         <p>
-          <a class="btn" href="/assets/files/talks/2025_milliyyet_slides.pdf">Slides (PDF)</a>
-          <a class="btn" href="https://youtu.be/VIDEO_ID" target="_blank" rel="noopener">Recording</a>
-        </p>
-        -->
-      </div>
-    </section>
-
-    <!-- Recent & Selected -->
-    <section>
-      <h2>Recent & Selected</h2>
-
-      <div class="card">
-        <h3>Making and Transcending Boundaries: The Effect of Ritual on Nationalism</h3>
-        <p class="muted">Social Science History Association (SSHA) Annual Meeting · 2024 · Conference presentation</p>
-        <!-- <p><a class="btn" href="/assets/files/talks/2024_ssha_boundaries_slides.pdf">Slides (PDF)</a></p> -->
-      </div>
-
-      <div class="card">
-        <h3>The Decline of National Identity in Multiethnic Societies: Religion and Nation in Iran and Belgium</h3>
-        <p class="muted">with Steven Pfaff · SSHA Annual Meeting · 2024 · Conference presentation</p>
-        <!-- <p><a class="btn" href="/assets/files/talks/2024_ssha_decline_slides.pdf">Slides (PDF)</a></p> -->
-      </div>
-
-      <div class="card">
-        <h3>Social Movements: The Iranian Example</h3>
-        <p class="muted">Gelisim University · Istanbul · 2023 · Invited talk</p>
-        <!-- <p><a class="btn" href="/assets/files/talks/2023_gelisim_slides.pdf">Slides (PDF)</a></p> -->
-      </div>
-    </section>
-
-    <!-- Embed example (optional) -->
-    <!--
-    <section>
-      <h2>Selected Recording</h2>
-      <div class="card" style="max-width:740px">
-        <h3>Title of Recorded Talk</h3>
-        <p class="muted">Event · Year</p>
-        <div style="aspect-ratio:16/9">
-          <iframe width="100%" height="100%" src="https://www.youtube.com/embed/VIDEO_ID"
-                  title="Talk recording" frameborder="0" allowfullscreen></iframe>
-        </div>
-      </div>
-    </section>
-    -->
-  </main>
-
-  <!-- Footer -->
-  <footer>
-    <div class="f-wrap">
-      <div class="f-col">
-        <h4>Ramin Jabbarli</h4>
-        <p class="muted">PhD Candidate in Sociology · University of Washington</p>
-        <p><a href="mailto:raminj@uw.edu">raminj@uw.edu</a></p>
-      </div>
-      <div class="f-col">
-        <h4>About</h4>
-        <ul>
-          <li><a href="/about.html">Biography</a></li>
-          <li><a href="/publications.html">Publications</a></li>
-        </ul>
-      </div>
-      <div class="f-col">
-        <h4>Teaching</h4>
-        <ul>
-          <li><a href="/teaching.html">Courses</a></li>
-          <li><a href="/assets/Ramin_Jabbarli_CV.pdf">CV (PDF)</a></li>
-        </ul>
-      </div>
-      <div class="f-col">
-        <h4>Media</h4>
-        <ul>
-          <li><a href="/media.html">Interviews</a></li>
-          <li><a href="/speaking.html">Speaking</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="f-foot">© <span id="y"></span> Ramin Jabbarli · All rights reserved.</div>
-  </footer>
-  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
-</body>
-</html>
+          <a class="btn" href="/assets/files/talks/2025_milliyyet_slides.pdf">Sli
