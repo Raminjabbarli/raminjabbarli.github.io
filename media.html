@@ -1,34 +1,226 @@
-<!DOCTYPE html><html lang="en"><head>
-<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Media — Ramin Jabbarli</title>
-<link rel="stylesheet" href="/assets/site.css">
-</head><body>
-<!-- Header --> (copy the same header)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Media — Ramin Jabbarli</title>
+  <meta name="description" content="Selected interviews, videos, and news featuring Ramin Jabbarli."/>
+  <link rel="icon" href="/assets/img/favicon.ico">
+  <link rel="stylesheet" href="/assets/site.css">
+  <style>
+    /* Fonts (Georgia for headings, Arial for body) */
+    html, body { font-family: Arial, Helvetica, sans-serif; line-height: 1.7; }
+    h1, h2, h3, .brand, .h-title { font-family: Georgia, "Times New Roman", Times, serif; letter-spacing:.1px; }
 
-<main>
-  <section>
-    <h2>Interviews and Media</h2>
+    /* Header color */
+    .nav{ background:#044B4D; }
+    .nav .brand a, .nav .menu a{ color:#fff; }
+    .nav .menu a:hover{ text-decoration:underline; }
+    .hero--solid{
+      color:#fff; background:#044B4D;
+      border-bottom:1px solid rgba(255,255,255,.25);
+    }
+    .hero--solid .h-sub{ color:rgba(255,255,255,.9); }
+    .hero--solid .btn{ border-color:#fff; color:#fff; background:transparent; }
+    .hero--solid .btn:hover{ background:rgba(255,255,255,.12); text-decoration:none; }
 
-    <div class="card">
-      <h3>Voice of America — US Elections and Iran, Pezeshkian, Mahsa Amini Protests (2024)</h3>
-      <p class="muted">Interview</p>
-      <p><a class="btn" href="https://example.com/voa-interview" target="_blank" rel="noopener">Watch</a></p>
-      <!-- Optional embed
-      <div style="aspect-ratio:16/9;max-width:740px">
-        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/VIDEO_ID" title="VOA Interview" frameborder="0" allowfullscreen></iframe>
+    /* Footer (light gray) */
+    .footer--light{ background:#f3f4f6; color:#4b5563; }
+    .footer--light a{ color:#1f2937; }
+    .footer--light h4{ color:#111827; }
+    .footer--light .muted{ color:#6b7280; }
+    .footer--light .f-foot{ border-top:1px solid #e5e7eb; color:#6b7280; }
+
+    /* Media layout */
+    :root { --line:#e5e7eb; }
+    .media-section{ margin:26px 0; }
+    .media-grid{
+      display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px;
+    }
+    .card{
+      background:#fff; border:1px solid var(--line); border-radius:12px;
+      overflow:hidden; display:flex; flex-direction:column;
+      box-shadow:0 2px 10px rgba(0,0,0,.03);
+    }
+    .card-body{ padding:12px 14px; }
+    .card h3{ margin:6px 0 6px; font-size:1.05rem; }
+    .muted{ color:#6b7280; }
+    .meta{ font-size:.92rem; color:#6b7280; }
+    .cover{
+      width:100%; aspect-ratio:16/9; object-fit:cover; background:#e5e7eb;
+    }
+
+    /* Video embeds */
+    .video .frame{
+      aspect-ratio:16/9; width:100%; border:0;
+      display:block;
+    }
+    .video .card-body{ padding-top:8px; }
+  </style>
+</head>
+<body>
+
+  <!-- Header / Nav -->
+  <nav class="nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <div class="brand"><a href="/index.html" style="text-decoration:none;color:inherit">Ramin Jabbarli</a></div>
+      <div class="menu">
+        <a href="/about.html">About</a>
+        <a href="/research.html">Research</a>
+        <a href="/teaching.html">Teaching</a>
+        <a href="/speaking.html">Speaking</a>
+        <a href="/media.html" aria-current="page">Media</a>
+        <a href="/contact.html">Contact</a>
       </div>
-      -->
     </div>
+  </nav>
 
-    <div class="card">
-      <h3>BBC — Iran Has Serious Grounds for Concern about Azerbaijanis (2023)</h3>
-      <p class="muted">Interview</p>
-      <p><a class="btn" href="https://example.com/bbc-interview" target="_blank" rel="noopener">Watch/Read</a></p>
+  <!-- Page header -->
+  <header class="hero hero--solid">
+    <div class="hero-wrap">
+      <div>
+        <h1 class="h-title">Media</h1>
+        <p class="h-sub">Selected interviews, videos, and news</p>
+      </div>
     </div>
+  </header>
 
-    <!-- Add more interviews with the same pattern -->
-  </section>
-</main>
+  <main>
+    <!-- Featured Videos / Interviews -->
+    <section class="media-section" id="videos">
+      <h2>Interviews & Videos</h2>
+      <div class="media-grid">
 
-<!-- Footer --> (copy the same footer)
-</body></html>
+        <!-- Poland Economic Forum panel (Topchubashov Center) -->
+        <article class="card video">
+          <iframe class="frame"
+            src="https://www.youtube.com/embed/adTSWUGPNiA?start=36"
+            title="History and current state of ethnic discrimination in Iran — Economic Forum"
+            allowfullscreen></iframe>
+          <div class="card-body">
+            <h3>History and Current State of Ethnic Discrimination in Iran</h3>
+            <div class="meta">Panel, 32nd Economic Forum — Karpacz, Poland (2023)</div>
+            <p class="muted">Hosted by Topchubashov Center. Remarks on discriminatory policies and nation-building anchored to Shi‘a identity.</p>
+          </div>
+        </article>
+
+        <!-- VOA Mother Tongue -->
+        <article class="card video">
+          <iframe class="frame"
+            src="https://www.youtube.com/embed/7FkaUClJGZk?start=253"
+            title="VOA Interview — Azerbaijanis in Iran and the Importance of Mother Tongue"
+            allowfullscreen></iframe>
+          <div class="card-body">
+            <h3>VOA: Azerbaijanis in Iran & the Importance of Mother Tongue</h3>
+            <div class="meta">Interview (2024)</div>
+          </div>
+        </article>
+
+        <!-- Akinchi interview -->
+        <article class="card video">
+          <iframe class="frame"
+            src="https://www.youtube.com/embed/Q4WSfR4J8yI?start=7"
+            title="Akinchi Interview — The Impact of Grievance on Mobilization"
+            allowfullscreen></iframe>
+          <div class="card-body">
+            <h3>Akinchi: The Impact of Grievance on Mobilization</h3>
+            <div class="meta">Interview (2020)</div>
+          </div>
+        </article>
+
+        <!-- BBC interview -->
+        <article class="card video">
+          <iframe class="frame"
+            src="https://www.youtube.com/embed/CopLDBi458M"
+            title="BBC Interview — Iran and Azerbaijan Relations"
+            allowfullscreen></iframe>
+          <div class="card-body">
+            <h3>BBC: Iran and the Republic of Azerbaijan Relations</h3>
+            <div class="meta">Interview (2023)</div>
+          </div>
+        </article>
+
+        <!-- Optional: VOA human rights commentary (add link later if desired) -->
+        <!--
+        <article class="card video">
+          <iframe class="frame" src="YOUTUBE_EMBED_URL" title="VOA — Human Rights Violations in Iran-Azerbaijan" allowfullscreen></iframe>
+          <div class="card-body">
+            <h3>VOA: Human Rights Violations in Iran-Azerbaijan</h3>
+            <div class="meta">Interview (2024)</div>
+          </div>
+        </article>
+        -->
+
+      </div>
+    </section>
+
+    <!-- News & Features -->
+    <section class="media-section" id="news">
+      <h2>News & Features</h2>
+      <div class="media-grid">
+
+        <!-- UW Sociology news item -->
+        <article class="card">
+          <a href="https://soc.washington.edu/news/2023/09/12/jabbarli-panelist-economic-forum-poland" target="_blank" rel="noopener">
+            <img class="cover" src="/assets/media/uw-poland-forum.jpg" alt="UW Sociology news — Jabbarli panelist at Economic Forum in Poland">
+          </a>
+          <div class="card-body">
+            <h3>
+              <a href="https://soc.washington.edu/news/2023/09/12/jabbarli-panelist-economic-forum-poland" target="_blank" rel="noopener" style="text-decoration:none;">
+                Jabbarli a Panelist at Economic Forum in Poland
+              </a>
+            </h3>
+            <div class="meta">UW Department of Sociology — Sept 12, 2023</div>
+            <p class="muted">Department news item highlighting participation at the 32nd Economic Forum in Karpacz, Poland.</p>
+          </div>
+        </article>
+
+        <!-- Add more news cards by duplicating this block and updating the link + image
+        <article class="card">
+          <a href="NEWS_URL" target="_blank" rel="noopener">
+            <img class="cover" src="/assets/media/NEWS_THUMB.jpg" alt="Short description of the news image">
+          </a>
+          <div class="card-body">
+            <h3><a href="NEWS_URL" target="_blank" rel="noopener" style="text-decoration:none;">News headline here</a></h3>
+            <div class="meta">Outlet — Month Day, Year</div>
+            <p class="muted">One-sentence summary of the piece.</p>
+          </div>
+        </article>
+        -->
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer (light gray) -->
+  <footer class="footer--light">
+    <div class="f-wrap">
+      <div class="f-col">
+        <h4>Ramin Jabbarli</h4>
+        <p class="muted">PhD Candidate in Sociology · University of Washington</p>
+        <p><a href="mailto:raminj@uw.edu">raminj@uw.edu</a></p>
+      </div>
+      <div class="f-col">
+        <h4>Site</h4>
+        <ul>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/research.html">Research</a></li>
+          <li><a href="/teaching.html">Teaching</a></li>
+          <li><a href="/speaking.html">Speaking</a></li>
+          <li><a href="/media.html" aria-current="page">Media</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h4>Files</h4>
+        <ul>
+          <li><a href="/assets/Ramin_Jabbarli_CV.pdf">CV (PDF)</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="f-foot">© <span id="y"></span> Ramin Jabbarli · All rights reserved.</div>
+  </footer>
+
+  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+</body>
+</html>
