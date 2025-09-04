@@ -1,70 +1,193 @@
-<!DOCTYPE html><html lang="en"><head>
-<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Teaching — Ramin Jabbarli</title>
-<link rel="stylesheet" href="/assets/site.css">
-</head><body>
-<!-- Header --> (copy the same header)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Teaching — Ramin Jabbarli</title>
+  <meta name="description" content="Teaching portfolio for Ramin Jabbarli: courses taught, TA experience, and syllabi."/>
+  <link rel="icon" href="/assets/img/favicon.ico">
+  <link rel="stylesheet" href="/assets/site.css">
+  <style>
+    /* Fonts (Georgia for headings, Arial for body) */
+    html, body { font-family: Arial, Helvetica, sans-serif; line-height: 1.7; }
+    h1, h2, h3, .brand, .h-title { font-family: Georgia, "Times New Roman", Times, serif; letter-spacing:.1px; }
 
-<main>
-  <section>
-    <h2>Courses as Instructor</h2>
+    /* Header color */
+    .nav{ background:#044B4D; }
+    .nav .brand a, .nav .menu a{ color:#fff; }
+    .nav .menu a:hover{ text-decoration:underline; }
+    .hero--solid{
+      color:#fff; background:#044B4D;
+      border-bottom:1px solid rgba(255,255,255,.25);
+    }
+    .hero--solid .h-sub{ color:rgba(255,255,255,.9); }
+    .hero--solid .btn{ border-color:#fff; color:#fff; background:transparent; }
+    .hero--solid .btn:hover{ background:rgba(255,255,255,.12); text-decoration:none; }
 
-    <div class="card">
-      <h3>SOC 247: Contemporary Social Movements (UW)</h3>
-      <p class="muted">Semesters taught: Summer 2020; Spring 2021; Summer 2021; Spring 2022; Summer 2022; Spring 2023; Summer 2023</p>
-      <p>
-        <a class="btn" href="/assets/files/syllabi/SOC247_syllabus.pdf">Syllabus (PDF)</a>
-        <a class="btn" href="https://youtu.be/VIDEO_ID" target="_blank" rel="noopener">Intro video</a>
-      </p>
-      <!-- Optional embedded video -->
-      <!-- <div style="aspect-ratio:16/9;max-width:740px">
-        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/VIDEO_ID" title="Course intro" frameborder="0" allowfullscreen></iframe>
-      </div> -->
+    /* Footer (light gray) */
+    .footer--light{ background:#f3f4f6; color:#4b5563; }
+    .footer--light a{ color:#1f2937; }
+    .footer--light h4{ color:#111827; }
+    .footer--light .muted{ color:#6b7280; }
+    .footer--light .f-foot{ border-top:1px solid #e5e7eb; color:#6b7280; }
+
+    /* Teaching lists */
+    :root { --line:#e5e7eb; }
+    .teach-section{ margin:28px 0; }
+    .course-list{ list-style:none; padding:0; margin:0; }
+    .course-list li{
+      border:1px solid var(--line); background:#fff; border-radius:12px;
+      padding:14px 16px; margin:10px 0;
+    }
+    .course-title{ font-weight:700; }
+    .course-meta{ color:#6b7280; margin-top:4px; }
+    .course-links{ margin-top:8px; display:flex; flex-wrap:wrap; gap:8px; }
+    .chip{
+      display:inline-block; padding:6px 10px; border-radius:999px;
+      border:1px solid #d1d5db; text-decoration:none; color:#111827; background:#fff;
+    }
+    .chip:hover{ background:#f9fafb; text-decoration:none; }
+  </style>
+</head>
+<body>
+
+  <!-- Header / Nav -->
+  <nav class="nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <div class="brand"><a href="/index.html" style="text-decoration:none;color:inherit">Ramin Jabbarli</a></div>
+      <div class="menu">
+        <a href="/about.html">About</a>
+        <a href="/research.html">Research</a>
+        <a href="/teaching.html" aria-current="page">Teaching</a>
+        <a href="/speaking.html">Speaking</a>
+        <a href="/media.html">Media</a>
+        <a href="/contact.html">Contact</a>
+      </div>
     </div>
+  </nav>
 
-    <div class="card">
-      <h3>SOC 316: Introduction to Sociological Theory (UW)</h3>
-      <p class="muted">Taught: Summer 2024</p>
-      <p><a class="btn" href="/assets/files/syllabi/SOC316_syllabus.pdf">Syllabus (PDF)</a></p>
+  <!-- Page header (no image) -->
+  <header class="hero hero--solid">
+    <div class="hero-wrap">
+      <div>
+        <h1 class="h-title">Teaching</h1>
+        <p class="h-sub">Courses taught, TA experience, and syllabus</p>
+        <div class="btns">
+          <a class="btn" href="/assets/Ramin_Jabbarli_CV.pdf">Download CV</a>
+          <a class="btn" href="/contact.html">Contact</a>
+        </div>
+      </div>
     </div>
+  </header>
 
-    <div class="card">
-      <h3>SOC 404: Sociology in Practice — Community and Civic Internship (UW)</h3>
-      <p class="muted">Taught: Winter 2023</p>
-      <p><a class="btn" href="/assets/files/syllabi/SOC404_syllabus.pdf">Syllabus (PDF)</a></p>
+  <main>
+    <!-- Brief teaching statement (1–2 paragraphs) -->
+    <section class="teach-section">
+      <p>I design classes that connect sociological theory to real-world questions of identity, ritual, protest, and belonging. Across lectures, discussions, and labs, I emphasize transparent methods, concept-to-measurement pipelines, and the habit of linking evidence to claims. Students practice interpreting texts alongside working with data, and they leave with tools to think across levels—from individual meaning to institutional structure.</p>
+      <p>My teaching spans social theory, social movements, and research methods. At the University of Washington, I have served as Instructor of Record and as a Teaching Assistant for courses that range from introductory surveys to statistical methods. I’ve also taught at Hofstra University, the School of the Art Institute of Chicago, and Everett Community College, as well as a community course for a non-profit organization.</p>
+    </section>
+
+    <!-- Courses Taught (Instructor of Record) -->
+    <section class="teach-section" id="instructor">
+      <h2>Courses Taught (Instructor of Record)</h2>
+      <ul class="course-list">
+        <li>
+          <div class="course-title">SOC 247: Contemporary Social Movements</div>
+          <div class="course-meta">University of Washington — Summer 2020; Spring 2021; Summer 2021; Spring 2022; Summer 2022; Spring 2023; Summer 2023.</div>
+          <div class="course-links">
+            <a class="chip" href="/assets/files/syllabi/Syllabi_SOC%20247-Contemporary%20Social%20Movements-Spring%202023.pdf" target="_blank" rel="noopener">Syllabus (PDF)</a>
+          </div>
+        </li>
+        <li>
+          <div class="course-title">SOC 404: Sociology in Practice (Community/Civic Internship Program)</div>
+          <div class="course-meta">University of Washington — Winter 2023.</div>
+        </li>
+        <li>
+          <div class="course-title">SOC 316: Introduction to Sociological Theory</div>
+          <div class="course-meta">University of Washington — Summer 2024.</div>
+        </li>
+        <li>
+          <div class="course-title">Classical Sociological Theories</div>
+          <div class="course-meta">Hofstra University — Spring 2025.</div>
+        </li>
+        <li>
+          <div class="course-title">Global Social Movements</div>
+          <div class="course-meta">School of the Art Institute of Chicago — Fall 2021.</div>
+        </li>
+        <li>
+          <div class="course-title">SOC& 101: Introduction to Sociology</div>
+          <div class="course-meta">Everett Community College — Fall 2025.</div>
+        </li>
+        <li>
+          <div class="course-title">Sociology of Social Movements (Community Course)</div>
+          <div class="course-meta">Azerbaijani Civic Nation (Non-Profit Organization), Toronto — Winter 2023 (remote).</div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Teaching Assistant -->
+    <section class="teach-section" id="ta">
+      <h2>Teaching Assistant</h2>
+      <ul class="course-list">
+        <li>
+          <div class="course-title">SOC 316: Introduction to Sociological Theory</div>
+          <div class="course-meta">University of Washington — Fall 2019; Fall 2022.</div>
+        </li>
+        <li>
+          <div class="course-title">SOC 257: Sociology of Religion</div>
+          <div class="course-meta">University of Washington — Fall 2020.</div>
+        </li>
+        <li>
+          <div class="course-title">STAT 221: Statistical Concepts and Methods for the Social Sciences</div>
+          <div class="course-meta">University of Washington — Fall 2023; Winter 2024; Spring 2024; Fall 2024; Winter 2025; Spring 2025.</div>
+        </li>
+        <li>
+          <div class="course-title">SOC 110: Survey of Sociology</div>
+          <div class="course-meta">University of Washington — Winter 2021.</div>
+        </li>
+        <li>
+          <div class="course-title">SOC 222: Sociology of Sport</div>
+          <div class="course-meta">University of Washington — Winter 2020.</div>
+        </li>
+        <li>
+          <div class="course-title">SOC 300: Foundations of Social Inquiry</div>
+          <div class="course-meta">University of Washington — Fall 2018; Winter 2022.</div>
+        </li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- Footer (light gray) -->
+  <footer class="footer--light">
+    <div class="f-wrap">
+      <div class="f-col">
+        <h4>Ramin Jabbarli</h4>
+        <p class="muted">PhD Candidate in Sociology · University of Washington</p>
+        <p><a href="mailto:raminj@uw.edu">raminj@uw.edu</a></p>
+      </div>
+      <div class="f-col">
+        <h4>Site</h4>
+        <ul>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/research.html">Research</a></li>
+          <li><a href="/teaching.html" aria-current="page">Teaching</a></li>
+          <li><a href="/speaking.html">Speaking</a></li>
+          <li><a href="/media.html">Media</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h4>Files</h4>
+        <ul>
+          <li><a href="/assets/Ramin_Jabbarli_CV.pdf">CV (PDF)</a></li>
+          <li><a href="/assets/files/syllabi/Syllabi_SOC%20247-Contemporary%20Social%20Movements-Spring%202023.pdf" target="_blank" rel="noopener">SOC 247 Syllabus (PDF)</a></li>
+        </ul>
+      </div>
     </div>
+    <div class="f-foot">© <span id="y"></span> Ramin Jabbarli · All rights reserved.</div>
+  </footer>
 
-    <div class="card">
-      <h3>Classical Sociological Theories (Hofstra)</h3>
-      <p class="muted">Taught: Spring 2025</p>
-      <p><a class="btn" href="/assets/files/syllabi/Hofstra_Classical_Theory_syllabus.pdf">Syllabus (PDF)</a></p>
-    </div>
-
-    <div class="card">
-      <h3>Global Social Movements (SAIC)</h3>
-      <p class="muted">Taught: Fall 2021</p>
-      <p><a class="btn" href="/assets/files/syllabi/SAIC_Global_Social_Movements_syllabus.pdf">Syllabus (PDF)</a></p>
-    </div>
-
-    <div class="card">
-      <h3>SOC& 101: Introduction to Sociology (Everett CC)</h3>
-      <p class="muted">Taught: Fall 2025</p>
-      <p><a class="btn" href="/assets/files/syllabi/Everett_SOC101_syllabus.pdf">Syllabus (PDF)</a></p>
-    </div>
-  </section>
-
-  <section>
-    <h2>Courses as Teaching Assistant (UW)</h2>
-    <ul>
-      <li class="item">STAT 221: Statistical Concepts and Methods for the Social Sciences — F23; W24; Sp24; F24; W25; Sp25</li>
-      <li class="item">SOC 316: Introduction to Sociological Theory — F2019; F2022</li>
-      <li class="item">SOC 257: Sociology of Religion — F2020</li>
-      <li class="item">SOC 110: Survey of Sociology — W2021</li>
-      <li class="item">SOC 222: Sociology of Sport — W2020</li>
-      <li class="item">SOC 300: Foundations of Social Inquiry — F2018; W2022</li>
-    </ul>
-  </section>
-</main>
-
-<!-- Footer --> (copy the same footer)
-</body></html>
+  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+</body>
+</html>
