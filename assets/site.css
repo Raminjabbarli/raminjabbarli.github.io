@@ -1,7 +1,7 @@
 :root{
   --max:1080px; --pad:24px;
   --accent:#0a66c2; --ink:#111; --muted:#666; --line:#eaeaea;
-  --bg:#fff; --card:#fff; --brand:#4b2e83; --brandText:#fff;
+  --bg:#fff; --card:#fff; --brand:#eaeaea; --brandText:#fff;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
