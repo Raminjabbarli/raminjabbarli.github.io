@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>About — Ramin Jabbarli</title>
-  <meta name="description" content="Ramin Jabbarli is a sociologist with a PhD from the University of Washington, working on ritual, national belonging, and ethnic boundaries in Iran, Turkey, and Belgium."/>
+  <title>Research — Ramin Jabbarli</title>
+  <meta name="description" content="Publications, works under review, works in progress, and public scholarship by Ramin Jabbarli."/>
   <link rel="icon" href="/assets/img/favicon.ico">
 
   <!-- Typefaces -->
@@ -14,7 +14,7 @@
 
   <style>
     /* =========================================================
-       TOKENS — identical to index.html and research.html
+       TOKENS — identical to index.html
        ========================================================= */
     :root{
       --paper:      #ffffff;
@@ -64,7 +64,10 @@
       padding-inline:var(--gutter);
     }
 
-    a:focus-visible{ outline:2px solid var(--ink); outline-offset:3px; }
+    a:focus-visible, button:focus-visible{
+      outline:2px solid var(--ink);
+      outline-offset:3px;
+    }
 
     .sr-only{
       position:absolute; width:1px; height:1px;
@@ -75,7 +78,10 @@
     /* =========================================================
        MASTHEAD
        ========================================================= */
-    .masthead{ background:var(--paper); position:sticky; top:0; z-index:50; }
+    .masthead{
+      background:var(--paper);
+      position:sticky; top:0; z-index:50;
+    }
     .masthead-inner{
       display:flex; align-items:center; justify-content:space-between;
       gap:24px; min-height:88px; flex-wrap:nowrap;
@@ -84,7 +90,8 @@
       font-family:var(--serif);
       font-size:19px; font-weight:700;
       letter-spacing:.06em;
-      text-decoration:none; white-space:nowrap;
+      text-decoration:none;
+      white-space:nowrap;
     }
     .menu{ display:flex; flex-wrap:wrap; gap:clamp(16px,2.4vw,30px); }
     .menu a{
@@ -98,20 +105,22 @@
       transition:color .16s ease, border-color .16s ease;
     }
     .menu a:hover,
-    .menu a[aria-current="page"]{ color:var(--ink); border-bottom-color:var(--ink); }
+    .menu a[aria-current="page"]{
+      color:var(--ink);
+      border-bottom-color:var(--ink);
+    }
     .menu-cv{ color:var(--ink) !important; font-weight:600; }
 
     /* =========================================================
        PAGE HERO
        ========================================================= */
-    .hero{ padding-block:clamp(72px,10vw,140px) clamp(40px,5vw,64px); }
+    .hero{ padding-block:clamp(72px,10vw,140px) clamp(48px,6vw,84px); }
     .hero-grid{
       display:grid;
-      grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);
+      grid-template-columns:minmax(0,1fr) minmax(0,1fr);
       gap:clamp(32px,6vw,80px);
       align-items:center;
     }
-    .portrait{ width:100%; height:auto; display:block; }
     .hero-name{
       font-size:clamp(2.35rem,6.4vw,4.4rem);
       text-transform:uppercase;
@@ -128,9 +137,12 @@
     .hero-links{
       display:flex; flex-wrap:wrap; gap:14px 26px;
       border-top:1px solid var(--hairline);
-      padding-top:24px; margin-top:30px;
+      padding-top:24px;
+      margin-top:30px;
       max-width:420px;
     }
+    .portrait{ width:100%; height:auto; display:block; }
+
     .more{
       display:inline-block;
       font-size:12.5px;
@@ -144,43 +156,53 @@
     .more:hover{ color:var(--ink-soft); border-bottom-color:var(--ink-soft); }
 
     /* =========================================================
-       BODY
+       PUBLICATION GROUPS
        ========================================================= */
     .band{ padding-block:clamp(8px,1.5vw,20px) clamp(48px,6vw,80px); }
 
-    .prose{ max-width:var(--measure); }
-    .prose p{
-      margin:0 0 24px;
-      color:var(--ink-body);
-      font-size:1.075rem;
-      line-height:1.78;
-    }
-    .prose p:last-child{ margin-bottom:0; }
-    .prose em{ font-family:var(--serif); font-style:italic; color:var(--ink); }
+    .pub-group{ margin-bottom:clamp(44px,5vw,64px); }
+    .pub-group:last-child{ margin-bottom:0; }
 
-    .facts{ margin-top:clamp(46px,5vw,68px); max-width:var(--measure); }
-    .facts-group{ margin-bottom:clamp(38px,4vw,52px); }
-    .facts-group:last-child{ margin-bottom:0; }
     .group-title{
-      font-size:clamp(1.05rem,1.8vw,1.3rem);
+      font-size:clamp(1.1rem,2vw,1.4rem);
       text-transform:uppercase;
       letter-spacing:.2em;
-      margin-bottom:24px;
+      margin-bottom:30px;
     }
-    .facts-list{ list-style:none; margin:0; padding:0; }
-    .facts-list li{ margin-bottom:18px; }
-    .facts-list li:last-child{ margin-bottom:0; }
-    .fact-name{
+
+    .pub-list{ list-style:none; margin:0; padding:0; max-width:var(--measure); }
+    .pub-list li{ margin-bottom:28px; }
+    .pub-list li:last-child{ margin-bottom:0; }
+
+    .pub-title{
       font-family:var(--serif);
       font-size:1.02rem;
       line-height:1.5;
       color:var(--ink);
     }
-    .fact-meta{
-      margin-top:5px;
+    .pub-title .alt{
+      font-style:italic;
+      font-weight:400;
+      color:var(--ink-soft);
+    }
+    .pub-meta{
+      margin-top:7px;
       font-size:.95rem;
       color:var(--ink-soft);
     }
+    .pub-meta em{ font-style:italic; }
+    .pub-doi{
+      display:inline-block;
+      margin-top:8px;
+      font-size:11.5px;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color:var(--ink-soft);
+      text-decoration:none;
+      border-bottom:1px solid var(--hairline);
+      padding-bottom:2px;
+    }
+    .pub-doi:hover{ color:var(--ink); border-bottom-color:var(--ink); }
 
     /* =========================================================
        FOOTER
@@ -195,18 +217,23 @@
     .f-name{
       font-family:var(--serif);
       font-size:1.1rem; font-weight:700;
-      letter-spacing:.05em; color:var(--ink);
+      letter-spacing:.05em;
+      color:var(--ink);
       margin:0 0 10px;
     }
     .f-line{ margin:0 0 8px; }
     .f-line a{ color:var(--ink-soft); text-decoration:none; }
     .f-line a:hover{ color:var(--ink); text-decoration:underline; text-underline-offset:4px; }
     .muted{ color:var(--ink-mute); }
-    .f-socials{ display:flex; flex-wrap:wrap; align-items:center; gap:14px; margin-top:22px; }
+    .f-socials{
+      display:flex; flex-wrap:wrap; align-items:center;
+      gap:14px; margin-top:22px;
+    }
     .iconbtn{
       display:inline-flex; align-items:center; justify-content:center;
       min-width:22px; height:22px; padding:5px;
-      color:var(--ink-soft); text-decoration:none;
+      color:var(--ink-soft);
+      text-decoration:none;
       transition:color .18s ease;
     }
     .iconbtn svg{ width:20px; height:20px; display:block; fill:currentColor; }
@@ -219,7 +246,8 @@
     .f-foot{
       margin:clamp(30px,4vw,44px) 0 0;
       padding-bottom:34px;
-      font-size:13.5px; color:var(--ink-mute);
+      font-size:13.5px;
+      color:var(--ink-mute);
     }
 
     /* =========================================================
@@ -231,6 +259,7 @@
       .masthead{ position:static; }
       .masthead-inner{ flex-wrap:wrap; justify-content:flex-start; gap:10px 20px; padding-block:16px; min-height:0; }
     }
+
     @media (prefers-reduced-motion:reduce){
       html{ scroll-behavior:auto; }
       *{ transition:none !important; }
@@ -245,8 +274,8 @@
       <a class="wordmark" href="/index.html">Ramin Jabbarli</a>
       <div class="menu">
         <a href="/index.html">Home</a>
-        <a href="/about.html" aria-current="page">About</a>
-        <a href="/research.html">Research</a>
+        <a href="/about.html">About</a>
+        <a href="/research.html" aria-current="page">Research</a>
         <a href="/teaching.html">Teaching</a>
         <a href="/speaking.html">Speaking</a>
         <a href="/media.html">Media</a>
@@ -260,16 +289,17 @@
   <section class="hero">
     <div class="shell hero-grid">
       <div>
-        <h1 class="hero-name">About</h1>
-        <p class="hero-role">Biography, training, and research focus</p>
+        <h1 class="hero-name">Research</h1>
+        <p class="hero-role">Publications, under review, and works in progress</p>
+
         <div class="hero-links">
+          <a class="more" href="https://scholar.google.com/citations?user=-PDx5J4AAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
           <a class="more" href="/assets/Ramin_Jabbarli_CV.pdf">Full CV</a>
-          <a class="more" href="/research.html">Research</a>
         </div>
       </div>
 
       <div class="portrait-wrap">
-        <img class="portrait" src="/assets/Ramin_about.jpg" alt="Ramin Jabbarli" loading="lazy" width="1080" height="1450">
+        <img class="portrait" src="/assets/Ramin_research.jpg" alt="Ramin Jabbarli presenting his research" loading="lazy">
       </div>
     </div>
   </section>
@@ -278,92 +308,108 @@
     <section class="band">
       <div class="shell">
 
-        <div class="prose">
-          <p>I am a sociologist with a PhD from the University of Washington, where I also earned an MA in Sociology in 2021, a BA with Honors in 2018, and a special concentration in Social Statistics at the Center for Statistics and the Social Sciences. My work spans social movement theory and collective action, the sociology of religion, identity, environmental sociology, and the comparative study of nationalism.</p>
-
-          <p>My dissertation, <em>Sacred Bonds: Ritual, Identity, and Nationhood</em>, asks a question that religion and nationalism scholarship has largely left open: when does shared religious practice bind dominant and subordinate ethnic groups into a common national identity, and when does it harden the boundary between them? Through a comparative study of Iran and Turkey, I develop an interactional theory of belonging, which locates the answer in the intensity of collective ritual rather than in doctrine or shared confession alone. The committee was chaired by Kyle Crowder, with Steven Pfaff, Edgar Kiser, Scott Radnitz, and Aria Fani.</p>
-
-          <p>The first article from this project, &ldquo;Making and Transcending Boundaries: The Effect of Ritual on Nationalism,&rdquo; appeared in <em>Theory and Society</em> in 2024. Two further papers are under review: one on ritual intensity and national belonging across multiethnic states, and a second, with Steven Pfaff, on popular religiosity and the rise and fall of Belgian nationalism. Work in progress extends the argument to the dynamics of exclusion and inclusion in Iran, to the mobilization of water protesters and the role of ethnic positionality in environmental grievance, and to the fragility of national belonging in Turkey.</p>
-
-          <p>I work in mixed methods, combining interviews with archival and newspaper research, comparative-historical analysis, text-as-data approaches, and statistical analysis of nationally representative surveys. I work in Azerbaijani, Turkish, Persian, and English, which allows me to read primary sources and conduct interviews directly across the cases I compare.</p>
-
-          <p>I have taught as instructor of record since 2021. At the University of Washington my courses have included criminology; drugs, law, and society; social stratification; sociological theory; contemporary social movements; and a civic internship seminar. I taught classical sociological theory at Hofstra University and global social movements at the School of the Art Institute of Chicago, and I currently teach introduction to sociology at Everett Community College and Cascadia College. I have also served as a teaching assistant for statistical concepts and methods for the social sciences, foundations of social inquiry, and the sociology of religion.</p>
-
-          <p>Outside the university I write and speak publicly on identity, protest, ethnic inequality, and human rights, with commentary and interviews for the BBC, Voice of America, and the <em>Kyiv Post</em>, and invited talks at the University of Toronto, the Economic Forum in Karpacz, and Geli&#351;im University in Istanbul. I am also a translator: with T&#252;rkan Urmulu I translated Samed Behrengi&rsquo;s literary works into Turkish across twelve volumes, along with books by Mehmet Emin Resulzade and Bijen Cezani.</p>
+        <!-- ---------- Peer-reviewed ---------- -->
+        <div class="pub-group" id="peer-reviewed">
+          <h2 class="group-title">Peer-Reviewed Articles</h2>
+          <ul class="pub-list">
+            <li>
+              <div class="pub-title">Making and Transcending Boundaries: The Effect of Ritual on Nationalism</div>
+              <div class="pub-meta"><em>Theory and Society</em> 53 (6): 1415&ndash;40, 2024.</div>
+              <a class="pub-doi" href="https://doi.org/10.1007/s11186-024-09581-4" target="_blank" rel="noopener">DOI</a>
+            </li>
+            <li>
+              <div class="pub-title">&#304;ran&rsquo;da Etnik Protestolar&#305;n Dinamikleri: 2006&rsquo;dan Bu Yana Azerbaycanl&#305;lar Taraf&#305;ndan D&#252;zenlenen Protestolar<br>
+                <span class="alt">The Dynamics of Ethnic Demonstrations in Iran since 2006: Comparing Ahmadinejad&rsquo;s and Rouhani&rsquo;s Terms</span></div>
+              <div class="pub-meta"><em>Sosyologca Dergisi</em> 10 (20): 191&ndash;209, 2020.</div>
+            </li>
+          </ul>
         </div>
 
-        <div class="facts">
+        <!-- ---------- Under review ---------- -->
+        <div class="pub-group" id="under-review">
+          <h2 class="group-title">Under Review</h2>
+          <ul class="pub-list">
+            <li>
+              <div class="pub-title">Why Shared Religion Does Not Always Unite: Ritual Intensity and National Belonging in Multiethnic States</div>
+              <div class="pub-meta">Under review at <em>American Journal of Sociology</em>. Submitted June 2026.</div>
+            </li>
+            <li>
+              <div class="pub-title">Popular Religiosity and National Identity in a Multiethnic Society: How Ritually-Intensive Religion Explains the Rise and Fall of Belgian Nationalism</div>
+              <div class="pub-meta">With Steven Pfaff. Under review at <em>Nations and Nationalism</em>. Submitted May 2026.</div>
+            </li>
+          </ul>
+        </div>
 
-          <div class="facts-group">
-            <h2 class="group-title">Education</h2>
-            <ul class="facts-list">
-              <li>
-                <div class="fact-name">PhD in Sociology, University of Washington</div>
-                <div class="fact-meta">2026. Dissertation: <em>Sacred Bonds: Ritual, Identity, and Nationhood</em>.</div>
-              </li>
-              <li>
-                <div class="fact-name">Special Concentration in Social Statistics</div>
-                <div class="fact-meta">Center for Statistics and the Social Sciences, University of Washington, 2025.</div>
-              </li>
-              <li>
-                <div class="fact-name">MA in Sociology, University of Washington</div>
-                <div class="fact-meta">2021.</div>
-              </li>
-              <li>
-                <div class="fact-name">BA in Sociology with Honors, University of Washington</div>
-                <div class="fact-meta">2018.</div>
-              </li>
-              <li>
-                <div class="fact-name">Associate of Arts with High Honors, Green River College</div>
-                <div class="fact-meta">2016.</div>
-              </li>
-            </ul>
-          </div>
+        <!-- ---------- In progress ---------- -->
+        <div class="pub-group" id="in-progress">
+          <h2 class="group-title">In Progress</h2>
+          <ul class="pub-list">
+            <li>
+              <div class="pub-title">Drawing the Boundaries: The Dynamics of Exclusion and Inclusion through Rituals in Iran</div>
+            </li>
+            <li>
+              <div class="pub-title">What Motivates Water Protesters? Ethnic Positionality, Framing, and Mobilization in Iran</div>
+            </li>
+            <li>
+              <div class="pub-title">Fragile Boundaries: Rituals, Ethnicities, and the Challenge of National Belonging in Turkey</div>
+            </li>
+          </ul>
+        </div>
 
-          <div class="facts-group">
-            <h2 class="group-title">Honors, Grants, and Awards</h2>
-            <ul class="facts-list">
-              <li>
-                <div class="fact-name">Roshan Cultural Heritage Institute Fellowship for Excellence in Persian Studies</div>
-                <div class="fact-meta">2024&ndash;2025.</div>
-              </li>
-              <li>
-                <div class="fact-name">Herbert L. Costner Award for Distinguished Graduate Student Paper</div>
-                <div class="fact-meta">Department of Sociology, University of Washington, 2024.</div>
-              </li>
-              <li>
-                <div class="fact-name">Smith Richardson Foundation Grant</div>
-                <div class="fact-meta">With Brenda Shaffer, for &ldquo;Iran Is More than Persia: Impact of Iran&rsquo;s Ethnic Minorities on Regime Stability and Regional Foreign Policy Behavior,&rdquo; 2020.</div>
-              </li>
-              <li>
-                <div class="fact-name">National Science Foundation Graduate Research Fellowship</div>
-                <div class="fact-meta">Honorable Mention, 2020.</div>
-              </li>
-              <li>
-                <div class="fact-name">Alpha Kappa Delta, International Sociology Honor Society</div>
-                <div class="fact-meta">Inducted 2018.</div>
-              </li>
-            </ul>
-          </div>
-
-          <div class="facts-group">
-            <h2 class="group-title">Professional Service</h2>
-            <ul class="facts-list">
-              <li>
-                <div class="fact-name">President, Foundation for Inclusive Society</div>
-                <div class="fact-meta">Seattle, 2022&ndash;present.</div>
-              </li>
-              <li>
-                <div class="fact-name">Director, Association of Washington State Azerbaijanis</div>
-                <div class="fact-meta">Seattle, 2025&ndash;present.</div>
-              </li>
-              <li>
-                <div class="fact-name">Chief Editor, Etekyazi.com</div>
-                <div class="fact-meta">2018&ndash;present.</div>
-              </li>
-            </ul>
-          </div>
-
+        <!-- ---------- Public scholarship ---------- -->
+        <div class="pub-group" id="public-scholarship">
+          <h2 class="group-title">Public Scholarship &amp; Other Publications</h2>
+          <ul class="pub-list">
+            <li>
+              <div class="pub-title">Collective Action</div>
+              <div class="pub-meta">With Steven Pfaff. Pp. 1&ndash;10 in <em>International Encyclopedia of Civil Society</em>, Springer, 2023.</div>
+            </li>
+            <li>
+              <div class="pub-title">The Challenges of Identity Politics in Iran</div>
+              <div class="pub-meta"><em>Baku Dialogues</em>, September 23, 2021.</div>
+            </li>
+            <li>
+              <div class="pub-title">Arab Protests in Iran: Water Crisis or Systemic Racism</div>
+              <div class="pub-meta"><em>The National Interest</em>, July 25, 2021.</div>
+            </li>
+            <li>
+              <div class="pub-title">The Nagorno-Karabakh War Widens the Ethnic Divide in Iran</div>
+              <div class="pub-meta"><em>The National Interest</em>, October 26, 2020.</div>
+            </li>
+            <li>
+              <div class="pub-title">Covid-19: Hitting Iran&rsquo;s Minorities Harder</div>
+              <div class="pub-meta">With Brenda Shaffer. <em>Middle East Institute</em>, April 17, 2020.</div>
+            </li>
+            <li>
+              <div class="pub-title">The Triggering and Deterring Factors of Recent Protests in Iran</div>
+              <div class="pub-meta"><em>Modern Diplomacy</em>, December 28, 2017.</div>
+            </li>
+            <li>
+              <div class="pub-title">&#304;ran feministl&#601;rind&#601; irq&#231;ilik izi<br>
+                <span class="alt">Racism and Persian Feminists</span></div>
+              <div class="pub-meta">Makroblog, March 14, 2017.</div>
+            </li>
+            <li>
+              <div class="pub-title">R&#601;sulzad&#601; v&#601; inqilab&#231;&#305; sosializm haqq&#305;nda d&#252;&#351;&#252;nc&#601;l&#601;r<br>
+                <span class="alt">On Rasulzade&rsquo;s Social Thought</span></div>
+              <div class="pub-meta">BBC, January 31, 2017.</div>
+            </li>
+            <li>
+              <div class="pub-title">K&#601;si&#351;&#601;n kimlikl&#601;r<br>
+                <span class="alt">The Clashing Identities</span></div>
+              <div class="pub-meta">Makroblog, January 25, 2017.</div>
+            </li>
+            <li>
+              <div class="pub-title">Adlar v&#601; ki&#351;il&#601;rin &#252;rk&#601;k dominantl&#305;&#287;&#305;<br>
+                <span class="alt">On Cross-dressing and Male Domination</span></div>
+              <div class="pub-meta">BBC, September 12, 2016.</div>
+            </li>
+            <li>
+              <div class="pub-title">&#304;randa etnikl&#601;r farscan&#305; l&#601;hc&#601;yl&#601; dan&#305;&#351;d&#305;&#287;&#305; &#252;&#231;&#252;n niy&#601; utan&#305;rlar<br>
+                <span class="alt">Double Consciousness and Accentism in Iran</span></div>
+              <div class="pub-meta">Azadl&#305;q Radiosu, November 15, 2015.</div>
+            </li>
+          </ul>
         </div>
 
       </div>
