@@ -21,6 +21,7 @@
       --paper:      #ffffff;   /* base background            */
       --paper-alt:  #f4f3f0;   /* alternating band           */
       --ink:        #17181a;   /* headings, primary text     */
+      --ink-body:   #2a2c30;   /* running body text          */
       --ink-soft:   #55575c;   /* secondary text             */
       --ink-mute:   #83868c;   /* captions, labels           */
       --rule:       #d8d6d1;   /* hairlines                  */
@@ -32,9 +33,9 @@
       --serif: "Libre Baskerville", Georgia, "Times New Roman", Times, serif;
       --sans:  "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
 
-      --measure: 68ch;         /* body line length           */
-      --shell: 1140px;         /* page container             */
-      --gutter: clamp(20px, 5vw, 56px);
+      --measure: 84ch;         /* body line length           */
+      --shell: 980px;          /* page container             */
+      --gutter: clamp(28px, 11vw, 124px);
     }
 
     /* =========================================================
@@ -155,8 +156,8 @@
 
     .portrait{
       width:100%;
-      aspect-ratio:4/5;
-      object-fit:cover;
+      height:auto;
+      display:block;
     }
 
     /* ---- Profile links ---- */
@@ -196,7 +197,7 @@
     .band{ padding-block:clamp(56px,8vw,96px); }
     .band--alt{ background:var(--paper-alt); }
 
-    .band-head{ margin-bottom:44px; }
+    .band-head{ margin-bottom:30px; }
     .band-title{
       font-size:clamp(1.25rem,2.4vw,1.6rem);
       text-transform:uppercase;
@@ -211,7 +212,12 @@
     }
 
     .prose{ max-width:var(--measure); }
-    .prose p{ margin:0 0 22px; color:var(--ink-soft); }
+    .prose p{
+      margin:0 0 24px;
+      color:var(--ink-body);
+      font-size:1.075rem;
+      line-height:1.78;
+    }
     .prose p:last-child{ margin-bottom:0; }
     .prose em{ font-family:var(--serif); font-style:italic; color:var(--ink); }
     .more{
@@ -262,7 +268,7 @@
        ========================================================= */
     @media (max-width:860px){
       .hero-grid{ grid-template-columns:1fr; }
-      .hero-grid .portrait-wrap{ order:-1; max-width:280px; }
+      .hero-grid .portrait-wrap{ order:-1; max-width:330px; }
       .masthead{ position:static; }
       .masthead-inner{ padding-block:16px; min-height:0; }
     }
@@ -319,7 +325,7 @@
       </div>
 
       <div class="portrait-wrap">
-        <img class="portrait" src="/assets/raminjj.jpeg" alt="Ramin Jabbarli" loading="lazy" width="520" height="650">
+        <img class="portrait" src="/assets/raminjabbarli.jpg" alt="Ramin Jabbarli giving a lecture" loading="lazy" width="1200" height="1600">
       </div>
     </div>
   </section>
@@ -330,17 +336,14 @@
       <div class="shell">
         <div class="band-head">
           <h2 class="band-title">About</h2>
-          <p class="band-sub">Research, teaching, and public scholarship</p>
         </div>
 
         <div class="prose">
-          <p>I am a sociologist with a PhD from the University of Washington. My work spans social movement theory and collective action, the sociology of religion, identity, environmental sociology, and the comparative study of nationalism. I study how collective ritual shapes the boundaries of national belonging in multiethnic societies &mdash; when shared religious practice binds dominant and subordinate ethnic groups together, and when it hardens the lines between them.</p>
+          <p>I am a sociologist with a PhD from the University of Washington, where I also completed a special concentration in Social Statistics at the Center for Statistics and the Social Sciences. My work spans social movement theory and collective action, the sociology of religion, identity, environmental sociology, and the comparative study of nationalism.</p>
 
-          <p>My dissertation, <em>Sacred Bonds: Ritual, Identity, and Nationhood</em>, develops an interactional theory of belonging through a comparative study of Iran and Turkey, and my article &ldquo;Making and Transcending Boundaries: The Effect of Ritual on Nationalism&rdquo; appeared in <em>Theory and Society</em> in 2024. I am extending this work to Belgium to test how ritual intensity and secularization interact across very different national contexts.</p>
+          <p>My dissertation, <em>Sacred Bonds: Ritual, Identity, and Nationhood</em>, develops an interactional theory of belonging through a comparative study of Iran and Turkey, and a related article appeared in <em>Theory and Society</em> in 2024. I use mixed methods, and I work in Azerbaijani, Turkish, Persian, and English.</p>
 
-          <p>I work in mixed methods, combining interviews with archival and newspaper research, comparative-historical analysis, text-as-data approaches, and statistical analysis of nationally representative surveys. My quantitative training includes a special concentration in Social Statistics from the Center for Statistics and the Social Sciences at the University of Washington. I work in Azerbaijani, Turkish, Persian, and English.</p>
-
-          <p>I have taught criminology, drugs and society, social stratification, sociological theory, social movements, and research methods at the University of Washington, Cascadia College, Everett Community College, Hofstra University, and the School of the Art Institute of Chicago. Alongside my academic work, I write and speak publicly on identity, protest, ethnic inequality, and human rights.</p>
+          <p>I have taught introduction to sociology, criminology, drugs and society, social stratification, sociological theory, social movements, research methods, and statistics. My teaching appointments include the University of Washington, Hofstra University, the School of the Art Institute of Chicago, Cascadia College, and Everett Community College. I also write and speak publicly on identity, protest, ethnic inequality, and human rights.</p>
 
           <p><a class="more" href="/about.html">Full biography</a></p>
         </div>
