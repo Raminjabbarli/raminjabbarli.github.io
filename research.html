@@ -6,219 +6,448 @@
   <title>Research — Ramin Jabbarli</title>
   <meta name="description" content="Publications, works under review, works in progress, and public scholarship by Ramin Jabbarli."/>
   <link rel="icon" href="/assets/img/favicon.ico">
-  <link rel="stylesheet" href="/assets/site.css">
+
+  <!-- Typefaces -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+
   <style>
-    /* Fonts (Georgia for headings, Arial for body) */
-    html, body { font-family: Arial, Helvetica, sans-serif; line-height: 1.7; }
-    h1, h2, h3, .brand, .h-title { font-family: Georgia, "Times New Roman", Times, serif; letter-spacing:.1px; }
+    /* =========================================================
+       TOKENS — identical to index.html
+       ========================================================= */
+    :root{
+      --paper:      #ffffff;
+      --paper-alt:  #f4f3f0;
+      --ink:        #17181a;
+      --ink-body:   #2a2c30;
+      --ink-soft:   #55575c;
+      --ink-mute:   #83868c;
+      --rule:       #d8d6d1;
+      --rule-firm:  #17181a;
+      --footer:     #eff1f2;
+      --hairline:   #e4e6e8;
 
-    /* Header color */    
-    .nav { 
-      background:#ffffff;   /* white background */
-    }
-    .nav .brand a, 
-    .nav .menu a { 
-      color:#000000;        /* dark text so it shows up on white */
-    }
-    .nav .menu a:hover { 
-      text-decoration:underline; 
+      --serif: "Libre Baskerville", Georgia, "Times New Roman", Times, serif;
+      --sans:  "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+
+      --measure: 82ch;
+      --shell: 1340px;
+      --gutter: clamp(24px, 4vw, 48px);
     }
 
-    .hero--solid{
-      color:#fff; background:#4F0341;
-      border-bottom:1px solid rgba(255,255,255,.25);
+    *,*::before,*::after{ box-sizing:border-box; }
+    html{ -webkit-text-size-adjust:100%; scroll-behavior:smooth; }
+    body{
+      margin:0;
+      background:var(--paper);
+      color:var(--ink);
+      font-family:var(--sans);
+      font-size:17px;
+      line-height:1.72;
+      -webkit-font-smoothing:antialiased;
     }
-    .hero--solid .h-sub{ color:rgba(255,255,255,.9); }
-    .hero--solid .btn{ border-color:#fff; color:#fff; background:transparent; }
-    .hero--solid .btn:hover{ background:rgba(255,255,255,.12); text-decoration:none; }
+    img{ max-width:100%; display:block; }
+    a{ color:inherit; }
 
-    /* Footer (light gray) */
-    .footer--light{ background:#f3f4f6; color:#4b5563; }
-    .footer--light a{ color:#1f2937; }
-    .footer--light h4{ color:#111827; }
-    .footer--light .muted{ color:#6b7280; }
-    .footer--light .f-foot{ border-top:1px solid #e5e7eb; color:#6b7280; }
+    h1,h2,h3{
+      font-family:var(--serif);
+      font-weight:700;
+      color:var(--ink);
+      margin:0;
+      line-height:1.2;
+    }
 
-    /* Publications list */
-    .pub-section{ margin: 26px 0; }
-    .pub-section h2{ margin-bottom: 10px; }
-    .pub-list{ list-style: none; padding: 0; margin: 0; }
-    .pub-list li{
-      border:1px solid #e5e7eb; border-radius:12px; padding:14px 16px; margin-bottom:10px;
-      background:#fff;
+    .shell{
+      max-width:var(--shell);
+      margin-inline:auto;
+      padding-inline:var(--gutter);
     }
-    .pub-title{ font-weight:700; }
-    .pub-meta{ color:#6b7280; margin-top:4px; }
-    .pub-links{ margin-top:8px; display:flex; flex-wrap:wrap; gap:8px; }
-    .chip{
-      display:inline-block; padding:6px 10px; border-radius:999px;
-      border:1px solid #d1d5db; text-decoration:none; color:#111827; background:#fff;
+
+    a:focus-visible, button:focus-visible{
+      outline:2px solid var(--ink);
+      outline-offset:3px;
     }
-    .chip:hover{ background:#f9fafb; text-decoration:none; }
+
+    .sr-only{
+      position:absolute; width:1px; height:1px;
+      padding:0; margin:-1px; overflow:hidden;
+      clip:rect(0,0,0,0); white-space:nowrap; border:0;
+    }
+
+    /* =========================================================
+       MASTHEAD
+       ========================================================= */
+    .masthead{
+      background:var(--paper);
+      position:sticky; top:0; z-index:50;
+    }
+    .masthead-inner{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:24px; min-height:88px; flex-wrap:nowrap;
+    }
+    .wordmark{
+      font-family:var(--serif);
+      font-size:19px; font-weight:700;
+      letter-spacing:.06em;
+      text-decoration:none;
+      white-space:nowrap;
+    }
+    .menu{ display:flex; flex-wrap:wrap; gap:clamp(16px,2.4vw,30px); }
+    .menu a{
+      font-size:12.5px;
+      letter-spacing:.15em;
+      text-transform:uppercase;
+      color:var(--ink-soft);
+      text-decoration:none;
+      padding-block:6px;
+      border-bottom:1px solid transparent;
+      transition:color .16s ease, border-color .16s ease;
+    }
+    .menu a:hover,
+    .menu a[aria-current="page"]{
+      color:var(--ink);
+      border-bottom-color:var(--ink);
+    }
+    .menu-cv{ color:var(--ink) !important; font-weight:600; }
+
+    /* =========================================================
+       PAGE HERO
+       ========================================================= */
+    .hero{ padding-block:clamp(72px,10vw,140px) clamp(48px,6vw,84px); }
+    .hero-grid{
+      display:grid;
+      grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+      gap:clamp(32px,6vw,80px);
+      align-items:center;
+    }
+    .hero-name{
+      font-size:clamp(2.35rem,6.4vw,4.4rem);
+      text-transform:uppercase;
+      letter-spacing:.02em;
+      line-height:1.04;
+    }
+    .hero-role{
+      font-size:clamp(14px,1.1vw,16px);
+      letter-spacing:.13em;
+      text-transform:uppercase;
+      color:var(--ink-soft);
+      margin:24px 0 0;
+    }
+    .hero-links{
+      display:flex; flex-wrap:wrap; gap:14px 26px;
+      border-top:1px solid var(--hairline);
+      padding-top:24px;
+      margin-top:30px;
+      max-width:420px;
+    }
+    .portrait{ width:100%; height:auto; display:block; }
+
+    .more{
+      display:inline-block;
+      font-size:12.5px;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color:var(--ink);
+      text-decoration:none;
+      border-bottom:1px solid var(--ink);
+      padding-bottom:3px;
+    }
+    .more:hover{ color:var(--ink-soft); border-bottom-color:var(--ink-soft); }
+
+    /* =========================================================
+       PUBLICATION GROUPS
+       ========================================================= */
+    .band{ padding-block:clamp(8px,1.5vw,20px) clamp(48px,6vw,80px); }
+
+    .pub-group{ margin-bottom:clamp(44px,5vw,64px); }
+    .pub-group:last-child{ margin-bottom:0; }
+
+    .group-title{
+      font-size:clamp(1.1rem,2vw,1.4rem);
+      text-transform:uppercase;
+      letter-spacing:.2em;
+      margin-bottom:30px;
+    }
+
+    .pub-list{ list-style:none; margin:0; padding:0; max-width:var(--measure); }
+    .pub-list li{ margin-bottom:28px; }
+    .pub-list li:last-child{ margin-bottom:0; }
+
+    .pub-title{
+      font-family:var(--serif);
+      font-size:1.02rem;
+      line-height:1.5;
+      color:var(--ink);
+    }
+    .pub-title .alt{
+      font-style:italic;
+      font-weight:400;
+      color:var(--ink-soft);
+    }
+    .pub-meta{
+      margin-top:7px;
+      font-size:.95rem;
+      color:var(--ink-soft);
+    }
+    .pub-meta em{ font-style:italic; }
+    .pub-doi{
+      display:inline-block;
+      margin-top:8px;
+      font-size:11.5px;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color:var(--ink-soft);
+      text-decoration:none;
+      border-bottom:1px solid var(--hairline);
+      padding-bottom:2px;
+    }
+    .pub-doi:hover{ color:var(--ink); border-bottom-color:var(--ink); }
+
+    /* =========================================================
+       FOOTER
+       ========================================================= */
+    .site-footer{
+      background:var(--footer);
+      margin-top:clamp(40px,7vw,88px);
+      padding-block:clamp(52px,7vw,76px) 0;
+      color:var(--ink-soft);
+      font-size:15.5px;
+    }
+    .f-name{
+      font-family:var(--serif);
+      font-size:1.1rem; font-weight:700;
+      letter-spacing:.05em;
+      color:var(--ink);
+      margin:0 0 10px;
+    }
+    .f-line{ margin:0 0 8px; }
+    .f-line a{ color:var(--ink-soft); text-decoration:none; }
+    .f-line a:hover{ color:var(--ink); text-decoration:underline; text-underline-offset:4px; }
+    .muted{ color:var(--ink-mute); }
+    .f-socials{
+      display:flex; flex-wrap:wrap; align-items:center;
+      gap:14px; margin-top:22px;
+    }
+    .iconbtn{
+      display:inline-flex; align-items:center; justify-content:center;
+      min-width:22px; height:22px; padding:5px;
+      color:var(--ink-soft);
+      text-decoration:none;
+      transition:color .18s ease;
+    }
+    .iconbtn svg{ width:20px; height:20px; display:block; fill:currentColor; }
+    .iconbtn-text{
+      font-family:var(--serif);
+      font-size:14px; font-weight:700;
+      letter-spacing:.04em; line-height:1;
+    }
+    .iconbtn:hover{ color:var(--ink); }
+    .f-foot{
+      margin:clamp(30px,4vw,44px) 0 0;
+      padding-bottom:34px;
+      font-size:13.5px;
+      color:var(--ink-mute);
+    }
+
+    /* =========================================================
+       RESPONSIVE
+       ========================================================= */
+    @media (max-width:860px){
+      .hero-grid{ grid-template-columns:1fr; }
+      .hero-grid .portrait-wrap{ order:-1; max-width:330px; }
+      .masthead{ position:static; }
+      .masthead-inner{ flex-wrap:wrap; justify-content:flex-start; gap:10px 20px; padding-block:16px; min-height:0; }
+    }
+
+    @media (prefers-reduced-motion:reduce){
+      html{ scroll-behavior:auto; }
+      *{ transition:none !important; }
+    }
   </style>
 </head>
 <body>
 
-  <!-- Header / Nav -->
-  <nav class="nav" aria-label="Main navigation">
-    <div class="nav-inner">
-      <div class="brand"><a href="/index.html" style="text-decoration:none;color:inherit">Ramin Jabbarli</a></div>
+  <!-- ===================== MASTHEAD ===================== -->
+  <header class="masthead">
+    <nav class="shell masthead-inner" aria-label="Main navigation">
+      <a class="wordmark" href="/index.html">Ramin Jabbarli</a>
       <div class="menu">
+        <a href="/index.html">Home</a>
         <a href="/about.html">About</a>
         <a href="/research.html" aria-current="page">Research</a>
         <a href="/teaching.html">Teaching</a>
         <a href="/speaking.html">Speaking</a>
         <a href="/media.html">Media</a>
         <a href="/contact.html">Contact</a>
+        <a class="menu-cv" href="/assets/Ramin_Jabbarli_CV.pdf">CV</a>
       </div>
-    </div>
-  </nav>
-
-  <!-- Page header (no image) -->
-  <header class="hero hero--solid">
-    <div class="hero-wrap">
-      <div>
-        <h1 class="h-title">Research</h1>
-        <p class="h-sub">Publications, under review, and works in progress</p>
-        <div class="btns">
-          <a class="btn" href="/assets/Ramin_Jabbarli_CV.pdf">Download CV</a>
-          <a class="btn" href="https://scholar.google.com/citations?user=-PDx5J4AAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
-        </div>
-      </div>
-    </div>
+    </nav>
   </header>
 
+  <!-- ===================== HERO ===================== -->
+  <section class="hero">
+    <div class="shell hero-grid">
+      <div>
+        <h1 class="hero-name">Research</h1>
+        <p class="hero-role">Publications, under review, and works in progress</p>
+
+        <div class="hero-links">
+          <a class="more" href="https://scholar.google.com/citations?user=-PDx5J4AAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
+          <a class="more" href="/assets/Ramin_Jabbarli_CV.pdf">Full CV</a>
+        </div>
+      </div>
+
+      <div class="portrait-wrap">
+        <img class="portrait" src="/assets/Ramin_research.jpg" alt="Ramin Jabbarli presenting his research" loading="lazy">
+      </div>
+    </div>
+  </section>
+
   <main>
-    <!-- Peer-reviewed articles -->
-    <section class="pub-section" id="peer-reviewed">
-      <h2>Peer-Reviewed Articles</h2>
-      <ul class="pub-list">
-        <li>
-          <div class="pub-title">Making and Transcending Boundaries: The Effect of Ritual on Nationalism</div>
-          <div class="pub-meta">Theory and Society 53 (6): 1415–1440, 2024.</div>
-          <div class="pub-links">
-            <a class="chip" href="https://doi.org/10.1007/s11186-024-09581-4" target="_blank" rel="noopener">DOI</a>
-            <!-- Add PDF if you host it: <a class="chip" href="/assets/files/papers/jabbarli_2024_theory_society.pdf">PDF</a> -->
-          </div>
-        </li>
-        <li>
-          <div class="pub-title">İran’da Etnik Protestoların Dinamikleri: 2006’tan Bu Yana Azerbaycanlılar Tarafından Düzenlenen Protestolar [The Dynamics of Ethnic Demonstrations in Iran since 2006; Comparing Ahmadinejad and Rouhani’s Terms]</div>
-          <div class="pub-meta">Sosyologca Dergisi, 2021.</div>
-        </li>
-      </ul>
-    </section>
+    <section class="band">
+      <div class="shell">
 
-    <!-- Under review -->
-    <section class="pub-section" id="under-review">
-      <h2>Under Review</h2>
-      <ul class="pub-list">
-        <li>
-          <div class="pub-title">Testing the Boundaries: Ritual Intensity and National Belonging in Turkey and Iran</div>
-          <div class="pub-meta">Under review at <em>Social Forces</em>.</div>
-        </li>
-        <li>
-          <div class="pub-title">Drawing the Boundaries: The Dynamics of Exclusion and Inclusion through Rituals in Iran</div>
-          <div class="pub-meta">Under review at <em>American Journal of Sociology</em>.</div>
-        </li>
-      </ul>
-    </section>
+        <!-- ---------- Peer-reviewed ---------- -->
+        <div class="pub-group" id="peer-reviewed">
+          <h2 class="group-title">Peer-Reviewed Articles</h2>
+          <ul class="pub-list">
+            <li>
+              <div class="pub-title">Making and Transcending Boundaries: The Effect of Ritual on Nationalism</div>
+              <div class="pub-meta"><em>Theory and Society</em> 53 (6): 1415&ndash;40, 2024.</div>
+              <a class="pub-doi" href="https://doi.org/10.1007/s11186-024-09581-4" target="_blank" rel="noopener">DOI</a>
+            </li>
+            <li>
+              <div class="pub-title">&#304;ran&rsquo;da Etnik Protestolar&#305;n Dinamikleri: 2006&rsquo;dan Bu Yana Azerbaycanl&#305;lar Taraf&#305;ndan D&#252;zenlenen Protestolar<br>
+                <span class="alt">The Dynamics of Ethnic Demonstrations in Iran since 2006: Comparing Ahmadinejad&rsquo;s and Rouhani&rsquo;s Terms</span></div>
+              <div class="pub-meta"><em>Sosyologca Dergisi</em> 10 (20): 191&ndash;209, 2020.</div>
+            </li>
+          </ul>
+        </div>
 
-    <!-- Works in progress -->
-    <section class="pub-section" id="in-progress">
-      <h2>In Progress</h2>
-      <ul class="pub-list">
-        <li>
-          <div class="pub-title">Fragile Boundaries: Rituals, Ethnicities, and the Challenge of National Belonging in Turkey</div>
-          <div class="pub-meta">Manuscript in preparation.</div>
-        </li>
-        <li>
-          <div class="pub-title">Drought and Disparity: How Ethnic Grievances Shape Perceptions of Water Scarcity</div>
-          <div class="pub-meta">Manuscript in preparation.</div>
-        </li>
-        <li>
-          <div class="pub-title">The Decline of National Identity in Multiethnic Societies: Religion and Nation in Iran and Belgium</div>
-          <div class="pub-meta">with Steven Pfaff · Manuscript in preparation.</div>
-        </li>
-      </ul>
-    </section>
+        <!-- ---------- Under review ---------- -->
+        <div class="pub-group" id="under-review">
+          <h2 class="group-title">Under Review</h2>
+          <ul class="pub-list">
+            <li>
+              <div class="pub-title">Why Shared Religion Does Not Always Unite: Ritual Intensity and National Belonging in Multiethnic States</div>
+              <div class="pub-meta">Under review at <em>American Journal of Sociology</em>. Submitted June 2026.</div>
+            </li>
+            <li>
+              <div class="pub-title">Popular Religiosity and National Identity in a Multiethnic Society: How Ritually-Intensive Religion Explains the Rise and Fall of Belgian Nationalism</div>
+              <div class="pub-meta">With Steven Pfaff. Under review at <em>Nations and Nationalism</em>. Submitted May 2026.</div>
+            </li>
+          </ul>
+        </div>
 
-    <!-- Public scholarship & other publications -->
-    <section class="pub-section" id="public-scholarship">
-      <h2>Public Scholarship & Other Publications</h2>
-      <ul class="pub-list">
-        <li>
-          <div class="pub-title">Collective Action</div>
-          <div class="pub-meta">with Steven Pfaff. In <em>International Encyclopedia of Civil Society</em>, 2023. Springer.</div>
-        </li>
-        <li>
-          <div class="pub-title">Arab Protests in Iran: Water Crisis or Systemic Racism</div>
-          <div class="pub-meta"><em>The National Interest</em>, July 25, 2021.</div>
-        </li>
-        <li>
-          <div class="pub-title">The Nagorno-Karabakh War Widens the Ethnic Divide in Iran</div>
-          <div class="pub-meta"><em>The National Interest</em>, October 26, 2020.</div>
-        </li>
-        <li>
-          <div class="pub-title">Covid-19: Hitting Iran’s Minorities Harder</div>
-          <div class="pub-meta">with Brenda Shafer. <em>Middle East Institute</em>, April 17, 2020.</div>
-        </li>
-        <li>
-          <div class="pub-title">Adlar və kişilərin ürkək dominantlığı [On Cross-dressing and Male Domination]</div>
-          <div class="pub-meta">BBC Azərbaycanca, September 12, 2016.</div>
-        </li>
-        <li>
-          <div class="pub-title">Rəsulzadə və inqilabçı sosializm haqqında düşüncələr [On Resulzade’s Social Thoughts]</div>
-          <div class="pub-meta">BBC Azərbaycanca, January 31, 2017.</div>
-        </li>
-        <li>
-          <div class="pub-title">İranda etniklər farscanı ləhcəylə danışdığı üçün niyə utanırlar [Double Consciousness and Accentism in Iran]</div>
-          <div class="pub-meta">AzadlıqRadiosu, November 15, 2015.</div>
-        </li>
-        <li>
-          <div class="pub-title">İran feministlərində irqçilik izi [Racism and Persian Feminists]</div>
-          <div class="pub-meta">Makroblog, March 14, 2017.</div>
-        </li>
-        <li>
-          <div class="pub-title">Kəsişən kimliklər [The Clashing Identities]</div>
-          <div class="pub-meta">Makroblog, January 25, 2017.</div>
-        </li>
-        <li>
-          <div class="pub-title">The Triggering and Deterring Factors of Recent Protests in Iran</div>
-          <div class="pub-meta"><em>Modern Diplomacy</em>, December 28, 2017.</div>
-        </li>
-      </ul>
+        <!-- ---------- In progress ---------- -->
+        <div class="pub-group" id="in-progress">
+          <h2 class="group-title">In Progress</h2>
+          <ul class="pub-list">
+            <li>
+              <div class="pub-title">Drawing the Boundaries: The Dynamics of Exclusion and Inclusion through Rituals in Iran</div>
+            </li>
+            <li>
+              <div class="pub-title">What Motivates Water Protesters? Ethnic Positionality, Framing, and Mobilization in Iran</div>
+            </li>
+            <li>
+              <div class="pub-title">Fragile Boundaries: Rituals, Ethnicities, and the Challenge of National Belonging in Turkey</div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- ---------- Public scholarship ---------- -->
+        <div class="pub-group" id="public-scholarship">
+          <h2 class="group-title">Public Scholarship &amp; Other Publications</h2>
+          <ul class="pub-list">
+            <li>
+              <div class="pub-title">Collective Action</div>
+              <div class="pub-meta">With Steven Pfaff. Pp. 1&ndash;10 in <em>International Encyclopedia of Civil Society</em>, Springer, 2023.</div>
+            </li>
+            <li>
+              <div class="pub-title">The Challenges of Identity Politics in Iran</div>
+              <div class="pub-meta"><em>Baku Dialogues</em>, September 23, 2021.</div>
+            </li>
+            <li>
+              <div class="pub-title">Arab Protests in Iran: Water Crisis or Systemic Racism</div>
+              <div class="pub-meta"><em>The National Interest</em>, July 25, 2021.</div>
+            </li>
+            <li>
+              <div class="pub-title">The Nagorno-Karabakh War Widens the Ethnic Divide in Iran</div>
+              <div class="pub-meta"><em>The National Interest</em>, October 26, 2020.</div>
+            </li>
+            <li>
+              <div class="pub-title">Covid-19: Hitting Iran&rsquo;s Minorities Harder</div>
+              <div class="pub-meta">With Brenda Shaffer. <em>Middle East Institute</em>, April 17, 2020.</div>
+            </li>
+            <li>
+              <div class="pub-title">The Triggering and Deterring Factors of Recent Protests in Iran</div>
+              <div class="pub-meta"><em>Modern Diplomacy</em>, December 28, 2017.</div>
+            </li>
+            <li>
+              <div class="pub-title">&#304;ran feministl&#601;rind&#601; irq&#231;ilik izi<br>
+                <span class="alt">Racism and Persian Feminists</span></div>
+              <div class="pub-meta">Makroblog, March 14, 2017.</div>
+            </li>
+            <li>
+              <div class="pub-title">R&#601;sulzad&#601; v&#601; inqilab&#231;&#305; sosializm haqq&#305;nda d&#252;&#351;&#252;nc&#601;l&#601;r<br>
+                <span class="alt">On Rasulzade&rsquo;s Social Thought</span></div>
+              <div class="pub-meta">BBC, January 31, 2017.</div>
+            </li>
+            <li>
+              <div class="pub-title">K&#601;si&#351;&#601;n kimlikl&#601;r<br>
+                <span class="alt">The Clashing Identities</span></div>
+              <div class="pub-meta">Makroblog, January 25, 2017.</div>
+            </li>
+            <li>
+              <div class="pub-title">Adlar v&#601; ki&#351;il&#601;rin &#252;rk&#601;k dominantl&#305;&#287;&#305;<br>
+                <span class="alt">On Cross-dressing and Male Domination</span></div>
+              <div class="pub-meta">BBC, September 12, 2016.</div>
+            </li>
+            <li>
+              <div class="pub-title">&#304;randa etnikl&#601;r farscan&#305; l&#601;hc&#601;yl&#601; dan&#305;&#351;d&#305;&#287;&#305; &#252;&#231;&#252;n niy&#601; utan&#305;rlar<br>
+                <span class="alt">Double Consciousness and Accentism in Iran</span></div>
+              <div class="pub-meta">Azadl&#305;q Radiosu, November 15, 2015.</div>
+            </li>
+          </ul>
+        </div>
+
+      </div>
     </section>
   </main>
 
-  <!-- Footer (light gray) -->
-  <footer class="footer--light">
-    <div class="f-wrap">
-      <div class="f-col">
-        <h4>Ramin Jabbarli</h4>
-        <p class="muted">PhD Candidate in Sociology · University of Washington</p>
-        <p><a href="mailto:raminj@uw.edu">raminj@uw.edu</a></p>
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="shell">
+      <p class="f-name">Ramin Jabbarli</p>
+      <p class="f-line muted">PhD in Sociology &middot; University of Washington</p>
+      <p class="f-line"><a href="mailto:raminj@uw.edu">raminj@uw.edu</a></p>
+
+      <div class="f-socials" aria-label="Profile links">
+        <a class="iconbtn" href="/assets/Ramin_Jabbarli_CV.pdf" aria-label="Curriculum vitae (PDF)" title="Curriculum vitae (PDF)">
+          <span class="iconbtn-text" aria-hidden="true">CV</span>
+        </a>
+        <a class="iconbtn" href="https://scholar.google.com/citations?user=-PDx5J4AAAAJ&amp;hl=en" target="_blank" rel="noopener" aria-label="Google Scholar" title="Google Scholar">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5.242 13.769 0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5s-5.548 1.749-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></svg>
+        </a>
+        <a class="iconbtn" href="https://orcid.org/0000-0003-0182-1591" target="_blank" rel="noopener" aria-label="ORCID" title="ORCID">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.516.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.303v7.444h2.297c2.359 0 3.947-1.716 3.947-3.722 0-2.016-1.5-3.722-4.125-3.722h-2.119z"/></svg>
+        </a>
+        <a class="iconbtn" href="https://www.linkedin.com/in/ramin-jabbarli/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a class="iconbtn" href="https://x.com/raminjabbarli" target="_blank" rel="noopener" aria-label="X" title="X">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932 6.064-6.933zm-1.291 19.49h2.039L6.486 3.24H4.298L17.61 20.643z"/></svg>
+        </a>
+        <a class="iconbtn" href="https://soc.washington.edu/people/ramin-jabbarli" target="_blank" rel="noopener" aria-label="University of Washington profile" title="University of Washington profile">
+          <span class="iconbtn-text" aria-hidden="true">UW</span>
+        </a>
       </div>
-      <div class="f-col">
-        <h4>Site</h4>
-        <ul>
-          <li><a href="/about.html">About</a></li>
-          <li><a href="/research.html" aria-current="page">Research</a></li>
-          <li><a href="/teaching.html">Teaching</a></li>
-          <li><a href="/speaking.html">Speaking</a></li>
-          <li><a href="/media.html">Media</a></li>
-          <li><a href="/contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <div class="f-col">
-        <h4>Files</h4>
-        <ul>
-          <li><a href="/assets/Ramin_Jabbarli_CV.pdf">CV (PDF)</a></li>
-        </ul>
-      </div>
+
+      <p class="f-foot">&copy; <span id="y"></span> Ramin Jabbarli &middot; All rights reserved.</p>
     </div>
-    <div class="f-foot">© <span id="y"></span> Ramin Jabbarli · All rights reserved.</div>
   </footer>
 
-  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
