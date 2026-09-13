@@ -33,9 +33,9 @@
       --serif: "Libre Baskerville", Georgia, "Times New Roman", Times, serif;
       --sans:  "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
 
-      --measure: 84ch;         /* body line length           */
-      --shell: 980px;          /* page container             */
-      --gutter: clamp(28px, 11vw, 124px);
+      --measure: 82ch;         /* body line length           */
+      --shell: 1340px;         /* page container             */
+      --gutter: clamp(24px, 4vw, 48px);
     }
 
     /* =========================================================
@@ -91,7 +91,7 @@
     }
     .masthead-inner{
       display:flex; align-items:center; justify-content:space-between;
-      gap:24px; min-height:78px; flex-wrap:wrap;
+      gap:24px; min-height:88px; flex-wrap:nowrap;
     }
     .wordmark{
       font-family:var(--serif);
@@ -124,7 +124,7 @@
        HERO
        ========================================================= */
     .hero{
-      padding-block:clamp(60px,9vw,120px);
+      padding-block:clamp(72px,10vw,140px) clamp(56px,7vw,100px);
     }
     .hero-grid{
       display:grid;
@@ -269,6 +269,7 @@
     @media (max-width:860px){
       .hero-grid{ grid-template-columns:1fr; }
       .hero-grid .portrait-wrap{ order:-1; max-width:330px; }
+      .masthead-inner{ flex-wrap:wrap; justify-content:flex-start; gap:10px 20px; }
       .masthead{ position:static; }
       .masthead-inner{ padding-block:16px; min-height:0; }
     }
