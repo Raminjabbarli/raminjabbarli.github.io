@@ -4,198 +4,433 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>Teaching — Ramin Jabbarli</title>
-  <meta name="description" content="Teaching portfolio for Ramin Jabbarli: courses taught, TA experience, and syllabi."/>
+  <meta name="description" content="Teaching portfolio for Ramin Jabbarli: courses designed and taught, teaching assistantships, and syllabi."/>
   <link rel="icon" href="/assets/img/favicon.ico">
-  <link rel="stylesheet" href="/assets/site.css">
+
+  <!-- Typefaces -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+
   <style>
-    /* Fonts (Georgia for headings, Arial for body) */
-    html, body { font-family: Arial, Helvetica, sans-serif; line-height: 1.7; }
-    h1, h2, h3, .brand, .h-title { font-family: Georgia, "Times New Roman", Times, serif; letter-spacing:.1px; }
+    /* =========================================================
+       TOKENS — identical to index, about, research
+       ========================================================= */
+    :root{
+      --paper:      #ffffff;
+      --paper-alt:  #f4f3f0;
+      --ink:        #17181a;
+      --ink-body:   #2a2c30;
+      --ink-soft:   #55575c;
+      --ink-mute:   #83868c;
+      --rule:       #d8d6d1;
+      --rule-firm:  #17181a;
+      --footer:     #eff1f2;
+      --hairline:   #e4e6e8;
 
-     /* Header color */    
-    .nav { 
-      background:#ffffff;   /* white background */
-    }
-    .nav .brand a, 
-    .nav .menu a { 
-      color:#000000;        /* dark text so it shows up on white */
-    }
-    .nav .menu a:hover { 
-      text-decoration:underline; 
+      --serif: "Libre Baskerville", Georgia, "Times New Roman", Times, serif;
+      --sans:  "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+
+      --measure: 82ch;
+      --shell: 1340px;
+      --gutter: clamp(24px, 4vw, 48px);
     }
 
-    .hero--solid{
-      color:#fff; background:#4F0341;
-      border-bottom:1px solid rgba(255,255,255,.25);
+    *,*::before,*::after{ box-sizing:border-box; }
+    html{ -webkit-text-size-adjust:100%; scroll-behavior:smooth; }
+    body{
+      margin:0;
+      background:var(--paper);
+      color:var(--ink);
+      font-family:var(--sans);
+      font-size:17px;
+      line-height:1.72;
+      -webkit-font-smoothing:antialiased;
     }
-    .hero--solid .h-sub{ color:rgba(255,255,255,.9); }
-    .hero--solid .btn{ border-color:#fff; color:#fff; background:transparent; }
-    .hero--solid .btn:hover{ background:rgba(255,255,255,.12); text-decoration:none; }
+    img{ max-width:100%; display:block; }
+    a{ color:inherit; }
 
-    /* Footer (light gray) */
-    .footer--light{ background:#f3f4f6; color:#4b5563; }
-    .footer--light a{ color:#1f2937; }
-    .footer--light h4{ color:#111827; }
-    .footer--light .muted{ color:#6b7280; }
-    .footer--light .f-foot{ border-top:1px solid #e5e7eb; color:#6b7280; }
+    h1,h2,h3{
+      font-family:var(--serif);
+      font-weight:700;
+      color:var(--ink);
+      margin:0;
+      line-height:1.2;
+    }
 
-    /* Teaching lists */
-    :root { --line:#e5e7eb; }
-    .teach-section{ margin:28px 0; }
-    .course-list{ list-style:none; padding:0; margin:0; }
-    .course-list li{
-      border:1px solid var(--line); background:#fff; border-radius:12px;
-      padding:14px 16px; margin:10px 0;
+    .shell{
+      max-width:var(--shell);
+      margin-inline:auto;
+      padding-inline:var(--gutter);
     }
-    .course-title{ font-weight:700; }
-    .course-meta{ color:#6b7280; margin-top:4px; }
-    .course-links{ margin-top:8px; display:flex; flex-wrap:wrap; gap:8px; }
-    .chip{
-      display:inline-block; padding:6px 10px; border-radius:999px;
-      border:1px solid #d1d5db; text-decoration:none; color:#111827; background:#fff;
+
+    a:focus-visible{ outline:2px solid var(--ink); outline-offset:3px; }
+
+    /* =========================================================
+       MASTHEAD
+       ========================================================= */
+    .masthead{ background:var(--paper); position:sticky; top:0; z-index:50; }
+    .masthead-inner{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:24px; min-height:88px; flex-wrap:nowrap;
     }
-    .chip:hover{ background:#f9fafb; text-decoration:none; }
+    .wordmark{
+      font-family:var(--serif);
+      font-size:19px; font-weight:700;
+      letter-spacing:.06em;
+      text-decoration:none; white-space:nowrap;
+    }
+    .menu{ display:flex; flex-wrap:wrap; gap:clamp(16px,2.4vw,30px); }
+    .menu a{
+      font-size:12.5px;
+      letter-spacing:.15em;
+      text-transform:uppercase;
+      color:var(--ink-soft);
+      text-decoration:none;
+      padding-block:6px;
+      border-bottom:1px solid transparent;
+      transition:color .16s ease, border-color .16s ease;
+    }
+    .menu a:hover,
+    .menu a[aria-current="page"]{ color:var(--ink); border-bottom-color:var(--ink); }
+    .menu-cv{ color:var(--ink) !important; font-weight:600; }
+
+    /* =========================================================
+       HERO
+       ========================================================= */
+    .hero{ padding-block:clamp(72px,10vw,140px) clamp(40px,5vw,64px); }
+    .hero-name{
+      font-size:clamp(2.35rem,6.4vw,4.4rem);
+      text-transform:uppercase;
+      letter-spacing:.02em;
+      line-height:1.04;
+    }
+    .hero-role{
+      font-size:clamp(14px,1.1vw,16px);
+      letter-spacing:.13em;
+      text-transform:uppercase;
+      color:var(--ink-soft);
+      margin:24px 0 0;
+    }
+    .hero-links{
+      display:flex; flex-wrap:wrap; gap:14px 26px;
+      border-top:1px solid var(--hairline);
+      padding-top:24px; margin-top:30px;
+      max-width:420px;
+    }
+    .more{
+      display:inline-block;
+      font-size:12.5px;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color:var(--ink);
+      text-decoration:none;
+      border-bottom:1px solid var(--ink);
+      padding-bottom:3px;
+    }
+    .more:hover{ color:var(--ink-soft); border-bottom-color:var(--ink-soft); }
+
+    /* =========================================================
+       BODY
+       ========================================================= */
+    .band{ padding-block:clamp(8px,1.5vw,20px) clamp(48px,6vw,80px); }
+
+    .prose{ max-width:var(--measure); }
+    .prose p{
+      margin:0 0 24px;
+      color:var(--ink-body);
+      font-size:1.075rem;
+      line-height:1.78;
+    }
+    .prose p:last-child{ margin-bottom:0; }
+
+    .courses{ margin-top:clamp(46px,5vw,68px); max-width:var(--measure); }
+    .course-group{ margin-bottom:clamp(40px,4.5vw,58px); }
+    .course-group:last-child{ margin-bottom:0; }
+    .group-title{
+      font-size:clamp(1.05rem,1.8vw,1.3rem);
+      text-transform:uppercase;
+      letter-spacing:.2em;
+      margin-bottom:26px;
+    }
+    .subhead{
+      font-family:var(--sans);
+      font-size:12px;
+      font-weight:600;
+      letter-spacing:.17em;
+      text-transform:uppercase;
+      color:var(--ink-mute);
+      margin:32px 0 18px;
+    }
+    .course-group .subhead:first-of-type{ margin-top:0; }
+
+    .course-list{ list-style:none; margin:0; padding:0; }
+    .course-list li{ margin-bottom:20px; }
+    .course-list li:last-child{ margin-bottom:0; }
+    .course-title{
+      font-family:var(--serif);
+      font-size:1.02rem;
+      line-height:1.5;
+      color:var(--ink);
+    }
+    .course-meta{
+      margin-top:5px;
+      font-size:.95rem;
+      color:var(--ink-soft);
+    }
+    .course-link{
+      display:inline-block;
+      margin-top:8px;
+      font-size:11.5px;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color:var(--ink-soft);
+      text-decoration:none;
+      border-bottom:1px solid var(--hairline);
+      padding-bottom:2px;
+    }
+    .course-link:hover{ color:var(--ink); border-bottom-color:var(--ink); }
+
+    /* =========================================================
+       FOOTER
+       ========================================================= */
+    .site-footer{
+      background:var(--footer);
+      margin-top:clamp(40px,7vw,88px);
+      padding-block:clamp(52px,7vw,76px) 0;
+      color:var(--ink-soft);
+      font-size:15.5px;
+    }
+    .f-name{
+      font-family:var(--serif);
+      font-size:1.1rem; font-weight:700;
+      letter-spacing:.05em; color:var(--ink);
+      margin:0 0 10px;
+    }
+    .f-line{ margin:0 0 8px; }
+    .f-line a{ color:var(--ink-soft); text-decoration:none; }
+    .f-line a:hover{ color:var(--ink); text-decoration:underline; text-underline-offset:4px; }
+    .muted{ color:var(--ink-mute); }
+    .f-socials{ display:flex; flex-wrap:wrap; align-items:center; gap:14px; margin-top:22px; }
+    .iconbtn{
+      display:inline-flex; align-items:center; justify-content:center;
+      min-width:22px; height:22px; padding:5px;
+      color:var(--ink-soft); text-decoration:none;
+      transition:color .18s ease;
+    }
+    .iconbtn svg{ width:20px; height:20px; display:block; fill:currentColor; }
+    .iconbtn-text{
+      font-family:var(--serif);
+      font-size:14px; font-weight:700;
+      letter-spacing:.04em; line-height:1;
+    }
+    .iconbtn:hover{ color:var(--ink); }
+    .f-foot{
+      margin:clamp(30px,4vw,44px) 0 0;
+      padding-bottom:34px;
+      font-size:13.5px; color:var(--ink-mute);
+    }
+
+    /* =========================================================
+       RESPONSIVE
+       ========================================================= */
+    @media (max-width:860px){
+      .masthead{ position:static; }
+      .masthead-inner{ flex-wrap:wrap; justify-content:flex-start; gap:10px 20px; padding-block:16px; min-height:0; }
+    }
+    @media (prefers-reduced-motion:reduce){
+      html{ scroll-behavior:auto; }
+      *{ transition:none !important; }
+    }
   </style>
 </head>
 <body>
 
-  <!-- Header / Nav -->
-  <nav class="nav" aria-label="Main navigation">
-    <div class="nav-inner">
-      <div class="brand"><a href="/index.html" style="text-decoration:none;color:inherit">Ramin Jabbarli</a></div>
+  <!-- ===================== MASTHEAD ===================== -->
+  <header class="masthead">
+    <nav class="shell masthead-inner" aria-label="Main navigation">
+      <a class="wordmark" href="/index.html">Ramin Jabbarli</a>
       <div class="menu">
+        <a href="/index.html">Home</a>
         <a href="/about.html">About</a>
         <a href="/research.html">Research</a>
         <a href="/teaching.html" aria-current="page">Teaching</a>
         <a href="/speaking.html">Speaking</a>
         <a href="/media.html">Media</a>
         <a href="/contact.html">Contact</a>
+        <a class="menu-cv" href="/assets/Ramin_Jabbarli_CV.pdf">CV</a>
       </div>
-    </div>
-  </nav>
-
-  <!-- Page header (no image) -->
-  <header class="hero hero--solid">
-    <div class="hero-wrap">
-      <div>
-        <h1 class="h-title">Teaching</h1>
-        <p class="h-sub">Courses taught, TA experience, and syllabus</p>
-        <div class="btns">
-          <a class="btn" href="/assets/Ramin_Jabbarli_CV.pdf">Download CV</a>
-          <a class="btn" href="/contact.html">Contact</a>
-        </div>
-      </div>
-    </div>
+    </nav>
   </header>
 
-  <main>
-    <!-- Brief teaching statement (1–2 paragraphs) -->
-    <section class="teach-section">
-      <p>I design classes that connect sociological theory to real-world questions of identity, ritual, protest, and belonging. Across lectures, discussions, and labs, I emphasize transparent methods, concept-to-measurement pipelines, and the habit of linking evidence to claims. Students practice interpreting texts alongside working with data, and they leave with tools to think across levels—from individual meaning to institutional structure.</p>
-      <p>My teaching spans social theory, social movements, and research methods. At the University of Washington, I have served as Instructor of Record and as a Teaching Assistant for courses that range from introductory surveys to statistical methods. I’ve also taught at Hofstra University, the School of the Art Institute of Chicago, and Everett Community College, as well as a community course for a non-profit organization.</p>
-    </section>
-
-    <!-- Courses Taught (Instructor of Record) -->
-    <section class="teach-section" id="instructor">
-      <h2>Courses Taught (Instructor of Record)</h2>
-      <ul class="course-list">
-        <li>
-          <div class="course-title">SOC 247: Contemporary Social Movements</div>
-          <div class="course-meta">University of Washington — Summer 2020; Spring 2021; Summer 2021; Spring 2022; Summer 2022; Spring 2023; Summer 2023.</div>
-          <div class="course-links">
-            <a class="chip" href="/assets/Syllabi_SOC%20247-Contemporary%20Social%20Movements-Spring%202023.pdf" target="_blank" rel="noopener">Syllabus (PDF)</a>
-          </div>
-        </li>
-        <li>
-          <div class="course-title">SOC 404: Sociology in Practice (Community/Civic Internship Program)</div>
-          <div class="course-meta">University of Washington — Winter 2023.</div>
-        </li>
-        <li>
-          <div class="course-title">SOC 316: Introduction to Sociological Theory</div>
-          <div class="course-meta">University of Washington — Summer 2024.</div>
-        </li>
-        <li>
-          <div class="course-title">Classical Sociological Theories</div>
-          <div class="course-meta">Hofstra University — Spring 2025.</div>
-        </li>
-        <li>
-          <div class="course-title">Global Social Movements</div>
-          <div class="course-meta">School of the Art Institute of Chicago — Fall 2021.</div>
-        </li>
-        <li>
-          <div class="course-title">SOC& 101: Introduction to Sociology</div>
-          <div class="course-meta">Everett Community College — Fall 2025.</div>
-        </li>
-        <li>
-          <div class="course-title">Sociology of Social Movements (Community Course)</div>
-          <div class="course-meta">Azerbaijani Civic Nation (Non-Profit Organization), Toronto — Winter 2023 (remote).</div>
-        </li>
-      </ul>
-    </section>
-
-    <!-- Teaching Assistant -->
-    <section class="teach-section" id="ta">
-      <h2>Teaching Assistant</h2>
-      <ul class="course-list">
-        <li>
-          <div class="course-title">SOC 316: Introduction to Sociological Theory</div>
-          <div class="course-meta">University of Washington — Fall 2019; Fall 2022.</div>
-        </li>
-        <li>
-          <div class="course-title">SOC 257: Sociology of Religion</div>
-          <div class="course-meta">University of Washington — Fall 2020.</div>
-        </li>
-        <li>
-          <div class="course-title">STAT 221: Statistical Concepts and Methods for the Social Sciences</div>
-          <div class="course-meta">University of Washington — Fall 2023; Winter 2024; Spring 2024; Fall 2024; Winter 2025; Spring 2025.</div>
-        </li>
-        <li>
-          <div class="course-title">SOC 110: Survey of Sociology</div>
-          <div class="course-meta">University of Washington — Winter 2021.</div>
-        </li>
-        <li>
-          <div class="course-title">SOC 222: Sociology of Sport</div>
-          <div class="course-meta">University of Washington — Winter 2020.</div>
-        </li>
-        <li>
-          <div class="course-title">SOC 300: Foundations of Social Inquiry</div>
-          <div class="course-meta">University of Washington — Fall 2018; Winter 2022.</div>
-        </li>
-      </ul>
-    </section>
-
-  </main>
-
-  <!-- Footer (light gray) -->
-  <footer class="footer--light">
-    <div class="f-wrap">
-      <div class="f-col">
-        <h4>Ramin Jabbarli</h4>
-        <p class="muted">PhD Candidate in Sociology · University of Washington</p>
-        <p><a href="mailto:raminj@uw.edu">raminj@uw.edu</a></p>
-      </div>
-      <div class="f-col">
-        <h4>Site</h4>
-        <ul>
-          <li><a href="/about.html">About</a></li>
-          <li><a href="/research.html">Research</a></li>
-          <li><a href="/teaching.html" aria-current="page">Teaching</a></li>
-          <li><a href="/speaking.html">Speaking</a></li>
-          <li><a href="/media.html">Media</a></li>
-          <li><a href="/contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <div class="f-col">
-        <h4>Files</h4>
-        <ul>
-          <li><a href="/assets/Ramin_Jabbarli_CV.pdf">CV (PDF)</a></li>
-          <li><a href="/assets/Syllabi_SOC%20247-Contemporary%20Social%20Movements-Spring%202023.pdf" target="_blank" rel="noopener">SOC 247 Syllabus (PDF)</a></li>
-        </ul>
+  <!-- ===================== HERO ===================== -->
+  <section class="hero">
+    <div class="shell">
+      <h1 class="hero-name">Teaching</h1>
+      <p class="hero-role">Courses, assistantships, and syllabi</p>
+      <div class="hero-links">
+        <a class="more" href="/assets/Ramin_Jabbarli_CV.pdf">Full CV</a>
+        <a class="more" href="/contact.html">Contact</a>
       </div>
     </div>
-    <div class="f-foot">© <span id="y"></span> Ramin Jabbarli · All rights reserved.</div>
+  </section>
+
+  <main>
+    <section class="band">
+      <div class="shell">
+
+        <div class="prose">
+          <p>I teach sociology as a discipline that tests its ideas against evidence. My courses move between theory and data: students read closely, learn where numbers come from and what they can bear, and practice connecting a claim to the evidence that would support or undermine it. Questions of identity, ritual, protest, and inequality run through most of what I teach, and I ask students to examine those questions in their own communities as well as in the assigned reading.</p>
+
+          <p>My courses range from introductory surveys to upper-division seminars &mdash; criminology; drugs, law, and society; social stratification; sociological theory; and social movements &mdash; taught at research universities, an art school, and two community colleges. That range matters to how I teach: the same material has to reach a first-year student meeting sociology for the first time and a senior preparing for graduate work, and designing for both has made me a more deliberate instructor.</p>
+        </div>
+
+        <div class="courses">
+
+          <!-- ---------- Courses designed and taught ---------- -->
+          <div class="course-group" id="courses">
+            <h2 class="group-title">Courses Designed and Taught</h2>
+
+            <p class="subhead">University of Washington</p>
+            <ul class="course-list">
+              <li>
+                <div class="course-title">SOC 371: Criminology</div>
+                <div class="course-meta">Summer 2026.</div>
+              </li>
+              <li>
+                <div class="course-title">SOC / LSJ 376: Drugs, Law, and Society</div>
+                <div class="course-meta">Spring 2026.</div>
+              </li>
+              <li>
+                <div class="course-title">SOC 360: Introduction to Social Stratification</div>
+                <div class="course-meta">Winter 2026.</div>
+              </li>
+              <li>
+                <div class="course-title">SOC 316: Introduction to Sociological Theory</div>
+                <div class="course-meta">Summer 2024.</div>
+              </li>
+              <li>
+                <div class="course-title">SOC 404: Sociology in Practice</div>
+                <div class="course-meta">Community and Civic Internship Program. Winter 2023.</div>
+              </li>
+              <li>
+                <div class="course-title">SOC 247: Contemporary Social Movements</div>
+                <div class="course-meta">Multiple terms, 2021&ndash;2023.</div>
+                <a class="course-link" href="/assets/Syllabi_SOC%20247-Contemporary%20Social%20Movements-Spring%202023.pdf" target="_blank" rel="noopener">Syllabus (PDF)</a>
+              </li>
+            </ul>
+
+            <p class="subhead">Hofstra University</p>
+            <ul class="course-list">
+              <li>
+                <div class="course-title">Classical Sociological Theories</div>
+                <div class="course-meta">Spring 2025.</div>
+              </li>
+            </ul>
+
+            <p class="subhead">School of the Art Institute of Chicago</p>
+            <ul class="course-list">
+              <li>
+                <div class="course-title">Global Social Movements</div>
+                <div class="course-meta">Fall 2021.</div>
+              </li>
+            </ul>
+
+            <p class="subhead">Cascadia College</p>
+            <ul class="course-list">
+              <li>
+                <div class="course-title">SOC 101: Introduction to Sociology</div>
+                <div class="course-meta">Spring 2026.</div>
+              </li>
+            </ul>
+
+            <p class="subhead">Everett Community College</p>
+            <ul class="course-list">
+              <li>
+                <div class="course-title">SOC 101: Introduction to Sociology</div>
+                <div class="course-meta">Fall 2025; Winter 2026; Spring 2026.</div>
+              </li>
+            </ul>
+
+            <p class="subhead">Community Teaching</p>
+            <ul class="course-list">
+              <li>
+                <div class="course-title">Sociology of Social Movements</div>
+                <div class="course-meta">Azerbaijani Civic Nation, Toronto. Winter 2023, remote.</div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- ---------- Teaching assistantships ---------- -->
+          <div class="course-group" id="ta">
+            <h2 class="group-title">Teaching Assistantships</h2>
+            <p class="subhead">University of Washington</p>
+            <ul class="course-list">
+              <li>
+                <div class="course-title">STAT / CSSS / SOC 221: Statistical Concepts and Methods for the Social Sciences</div>
+                <div class="course-meta">Fall 2023; Winter, Spring, and Fall 2024; Winter and Spring 2025.</div>
+              </li>
+              <li>
+                <div class="course-title">SOC 316: Introduction to Sociological Theory</div>
+                <div class="course-meta">Fall 2019; Fall 2022.</div>
+              </li>
+              <li>
+                <div class="course-title">SOC 300: Foundations of Social Inquiry</div>
+                <div class="course-meta">Fall 2018; Winter 2022.</div>
+              </li>
+              <li>
+                <div class="course-title">SOC 110: Survey of Sociology</div>
+                <div class="course-meta">Winter 2021.</div>
+              </li>
+              <li>
+                <div class="course-title">SOC 257: Sociology of Religion</div>
+                <div class="course-meta">Fall 2020.</div>
+              </li>
+              <li>
+                <div class="course-title">SOC 222: Sociology of Sport</div>
+                <div class="course-meta">Winter 2020.</div>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="shell">
+      <p class="f-name">Ramin Jabbarli</p>
+      <p class="f-line muted">PhD in Sociology &middot; University of Washington</p>
+      <p class="f-line"><a href="mailto:raminj@uw.edu">raminj@uw.edu</a></p>
+
+      <div class="f-socials" aria-label="Profile links">
+        <a class="iconbtn" href="/assets/Ramin_Jabbarli_CV.pdf" aria-label="Curriculum vitae (PDF)" title="Curriculum vitae (PDF)">
+          <span class="iconbtn-text" aria-hidden="true">CV</span>
+        </a>
+        <a class="iconbtn" href="https://scholar.google.com/citations?user=-PDx5J4AAAAJ&amp;hl=en" target="_blank" rel="noopener" aria-label="Google Scholar" title="Google Scholar">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5.242 13.769 0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5s-5.548 1.749-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></svg>
+        </a>
+        <a class="iconbtn" href="https://orcid.org/0000-0003-0182-1591" target="_blank" rel="noopener" aria-label="ORCID" title="ORCID">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.516.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.303v7.444h2.297c2.359 0 3.947-1.716 3.947-3.722 0-2.016-1.5-3.722-4.125-3.722h-2.119z"/></svg>
+        </a>
+        <a class="iconbtn" href="https://www.linkedin.com/in/ramin-jabbarli/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a class="iconbtn" href="https://x.com/raminjabbarli" target="_blank" rel="noopener" aria-label="X" title="X">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932 6.064-6.933zm-1.291 19.49h2.039L6.486 3.24H4.298L17.61 20.643z"/></svg>
+        </a>
+        <a class="iconbtn" href="https://soc.washington.edu/people/ramin-jabbarli" target="_blank" rel="noopener" aria-label="University of Washington profile" title="University of Washington profile">
+          <span class="iconbtn-text" aria-hidden="true">UW</span>
+        </a>
+      </div>
+
+      <p class="f-foot">&copy; <span id="y"></span> Ramin Jabbarli &middot; All rights reserved.</p>
+    </div>
   </footer>
 
-  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
